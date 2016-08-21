@@ -310,7 +310,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="70dp"
                 android:layout_below="@+id/tide_card"
                 card_view:contentPadding="10dp"
                 card_view:cardElevation="2dp"
