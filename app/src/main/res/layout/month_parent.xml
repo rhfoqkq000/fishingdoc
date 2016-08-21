@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/parent_date"
+            android:text="날짜"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="30dp"/>
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingBar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_below="@+id/parent_date"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="8dp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/parent_image"
+            android:src="@drawable/circle"
+            android:layout_marginLeft="60dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/parent_date"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/parent_rate1"
+            android:text="↑96º"
+            android:textSize="25dp"
+            android:layout_marginLeft="15dp"
+            android:textStyle="bold"
+            android:textColor="#FF6666"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/parent_image"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/parent_rate2"
+            android:text="↓78º"
+            android:textSize="25dp"
+            android:layout_marginLeft="15dp"
+            android:textStyle="bold"
+            android:textColor="#FF99FF"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/parent_rate1"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/parent_moon"
+            android:src="@drawable/moon1"
+            android:layout_marginLeft="45dp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/parent_major"
+            android:text="MAJOR FEEDING"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="35dp"
+            android:layout_toEndOf="@+id/parent_moon"/>
+        <TextView
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/parent_major_content"
+            android:text="1:57오후 - 3:57오후 1:30오전 - 3:30오전"
+            android:textSize="12dp"
+            android:layout_marginLeft="35dp"
+            android:layout_toEndOf="@+id/parent_moon"
+            android:layout_below="@+id/parent_major"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/parent_minor"
+            android:text="MINOR FEEDING"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@+id/parent_major"/>
+        <TextView
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/parent_minor_content"
+            android:text="8:21오후 - 9:21오후 7:25오전 - 8:25오전"
+            android:textSize="12dp"
+            android:layout_marginLeft="15dp"
+            android:layout_toEndOf="@+id/parent_major_content"
+            android:layout_below="@+id/parent_minor"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/parent_tide"
+            android:text="TIDES"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/parent_tide_text1"
+            android:text="▲ 03:43AM"
+            android:textSize="12dp"
+            android:layout_toEndOf="@+id/parent_tide"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/parent_tide_text2"
+            android:text="▼ 09:25AM"
+            android:textSize="12dp"
+            android:layout_toEndOf="@+id/parent_tide_text1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/parent_tide_text3"
+            android:text="▲ 03:31PM"
+            android:textSize="12dp"
+            android:layout_toEndOf="@+id/parent_tide_text2"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/parent_tide_text4"
+            android:text="▼ 10:03PM"
+            android:textSize="12dp"
+            android:layout_toEndOf="@+id/parent_tide_text3"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,158 @@
+package com.example.kim.fishingdoc.weather;
+
+import android.os.Bundle;
+import android.os.Handler;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+
+import com.example.kim.fishingdoc.Json;
+import com.example.kim.fishingdoc.Json2;
+import com.example.kim.fishingdoc.Json3;
+import com.example.kim.fishingdoc.R;
+
+import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+/**
+ * Created by Ryu on 2016-08-19.
+ */
+public class Weather_List extends Fragment {
+
+    private Weather_ListView madapter;
+    private ListView mlist;
+    final String url = "http://45.76.96.142:3000/crawler/";
+    public Json json;
+    public Json2 json2;
+    public Json3 json3;
+    String locEncode;
+    String year;
+    String month;
+    String day;
+    String hour;
+    String min;
+    String sec;
+
+    //oncreate rootview /바깥 getactivity
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.weather_list, container, false);
+
+        String date = getDateString();
+        Log.i("date : ", date);
+        String date2 = date.split(" ")[0];
+        String date3 = date.split(" ")[1];
+        year = date2.split("-")[0];
+        month = date2.split("-")[1];
+        day = date2.split("-")[2];
+        Log.e("day : ", day);
+        hour = date3.split(":")[0];
+        min = date3.split(":")[1];
+        sec = date3.split(":")[2];
+
+
+        json = new Json();
+        json.execute(url+"getCido");
+        Log.i("실행!!", "");
+
+        madapter = new Weather_ListView();
+        mlist = (ListView) rootView.findViewById(R.id.listView);
+        Log.i("list 생성!!", "");
+
+        Handler handler = new Handler();
+        new Handler().postDelayed(new Runnable() {// 1 초 후에 실행
+
+            @Override
+            public void run() {
+                mlist.setAdapter(madapter);
+                Log.i("두번째 execute list : ", "" + json.sido_kr);
+                for (int i = 0; i < json.sido_kr.size(); i++) {
+                    madapter.addItem(ContextCompat.getDrawable(getContext(), R.drawable.wave1), json.sido_kr.get(i));
+                }
+            }
+        }, 1000);
+
+
+        mlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Weather_ListData mData = madapter.mlistDataWeather.get(i);
+                Log.i("누른거 : ", "" + mData.mtext);
+                String en = json.getsido(mData.mtext).toString();
+                String loc = json.getlocation(mData.mtext).toString();
+                Log.i("eng : " + en, " / loc : " + loc);
+
+                try {
+                    locEncode = URLEncoder.encode(loc, "UTF-8");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                String add = url+"sidoMoon/sidocode/"+locEncode+"/"+year+"/"+month;
+                Log.i("url : ", add);
+
+                json2 = new Json2();
+                json2.execute(url + en + "/" + year + month);
+
+                json3 = new Json3();
+                json3.execute(add);
+
+                Handler handler = new Handler();
+                new Handler().postDelayed(new Runnable() {// 1 초 후에 실행
+
+                    @Override
+                    public void run() {
+                        String luna = json2.getLuna(day).toString();
+                        String height = json2.getHeight(day).toString();
+                        String moonRise = json3.getRise(day).toString();
+                        String moonIng = json3.getIng(day).toString();
+                        String moonSet = json3.getSet(day).toString();
+                        Log.e("오늘 음력 : ", luna);
+                        Log.e("오늘 간만 : ", height);
+                        Log.e("오늘 월출 : ", moonRise);
+                        Log.e("오늘 남중 : ", moonIng);
+                        Log.e("오늘 월몰 : ", moonSet);
+                    }
+                }, 2000);
+
+                Log.i("위도", "" + json.latitude.get(i));
+                Log.i("경도", "" + json.longitude.get(i));
+//                Log.i("음력", "" + json2.luna.get(i));
+//                Log.i("월출", "" + json3.moonRise.get(i));
+
+                Fragment weatherfragment =  new WeatherFragment();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_id, weatherfragment).commit();
+//                getActivity().getSupportFragmentManager().beginTransaction().add(getActivity().getWindow().getDecorView().
+//                        findViewById(android.R.id.content).getId(),fragment)
+//                        .commit();
+//                Intent myIntent = new Intent(getContext(), WeatherFragment.class);
+//                myIntent.putExtra("lat", gPHP2.latitude.get(i));
+//                myIntent.putExtra("long", gPHP2.longitude.get(i));
+//                myIntent.putExtra("fact", gPHP2.townFact.get(i));
+//                myIntent.putExtra("name", gPHP2.townName.get(i));
+//                myIntent.putExtra("good", gPHP2.townGood.get(i));
+//                myIntent.putExtra("bad", gPHP2.townBad.get(i));
+//                startActivity(myIntent);
+
+            }
+        });
+        return rootView;
+    }
+
+    public String getDateString()
+    {
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.KOREA);
+        String str_date = df.format(new Date());
+
+        return str_date;
+    }
+}
