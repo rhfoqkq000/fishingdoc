@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -66,10 +67,6 @@ public class Weather_List extends Fragment {
     ArrayList<String> sido_en = new ArrayList<String>();
     ArrayList<String> location = new ArrayList<String>();
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 041fc26cddae2351798648681174f442bf65445c
     //oncreate rootview /바깥 getactivity
     @Nullable
     @Override
@@ -87,7 +84,6 @@ public class Weather_List extends Fragment {
         hour = date3.split(":")[0];
         min = date3.split(":")[1];
         sec = date3.split(":")[2];
-<<<<<<< HEAD
 
         try{
             json = new Json();
@@ -105,7 +101,6 @@ public class Weather_List extends Fragment {
         }catch(Exception e){
             e.printStackTrace();
         }
-=======
 //
 //        try{
 //            json = new Json();
@@ -179,7 +174,6 @@ public class Weather_List extends Fragment {
         madapter = new Weather_ListView();
         mlist = (ListView) rootView.findViewById(R.id.listView);
         Log.i("list 생성!!", "");
->>>>>>> 041fc26cddae2351798648681174f442bf65445c
 
                 mlist.setAdapter(madapter);
                 Log.i("두번째 execute list : ", "" + hash.get("sido_kr"));
@@ -207,7 +201,6 @@ public class Weather_List extends Fragment {
                 String add = url+"sidoMoon/sidocode/"+locEncode+"/"+year+"/"+month;
                 Log.i("url : ", add);
 
-<<<<<<< HEAD
                 try{
                     json2 = new Json2();
                     hash2 = json2.execute(url + en + "/" + year + month).get();
@@ -244,7 +237,7 @@ public class Weather_List extends Fragment {
 //                Log.i("경도", "" + longitude.get(i));
 //                Log.i("음력", "" + json2.luna.get(i));
 //                Log.i("월출", "" + json3.moonRise.get(i));
-=======
+
                 json2 = new Json2();
                 json2.execute(url + en + "/" + year + month);
 
@@ -256,11 +249,11 @@ public class Weather_List extends Fragment {
 
                     @Override
                     public void run() {
-                        String luna = json2.getLuna(day).toString();
-                        String height = json2.getHeight(day).toString();
-                        String moonRise = json3.getRise(day).toString();
-                        String moonIng = json3.getIng(day).toString();
-                        String moonSet = json3.getSet(day).toString();
+                        String luna = getLuna(day).toString();
+                        String height = getHeight(day).toString();
+                        String moonRise = getRise(day).toString();
+                        String moonIng = getIng(day).toString();
+                        String moonSet = getSet(day).toString();
                         Log.e("오늘 음력 : ", luna);
                         Log.e("오늘 간만 : ", height);
                         Log.e("오늘 월출 : ", moonRise);
@@ -269,11 +262,11 @@ public class Weather_List extends Fragment {
                     }
                 }, 2000);
 
-                Log.i("위도", "" + json.latitude.get(i));
-                Log.i("경도", "" + json.longitude.get(i));
+                Log.i("위도", "" + latitude.get(i));
+                Log.i("경도", "" + longitude.get(i));
                 Log.i("음력", "" + json2.luna.get(i));
                 Log.i("월출", "" + json3.moonRise.get(i));
->>>>>>> 041fc26cddae2351798648681174f442bf65445c
+
 
                 Fragment weatherfragment =  new WeatherFragment();
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_id, weatherfragment).commit();
