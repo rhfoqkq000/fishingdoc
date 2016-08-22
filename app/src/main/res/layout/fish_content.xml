@@ -62,64 +62,64 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <TextView
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="특징"
-                    android:layout_margin="6dp"
-                    android:textSize="22dp"
-                    android:textStyle="bold"
-                    android:id="@+id/distin"/>
+                    android:id="@+id/re_distin">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="특징"
+                        android:layout_margin="6dp"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:id="@+id/distin"/>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:id="@+id/view1"
-                    android:background="#ccc"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_below="@+id/distin" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:id="@+id/view1"
+                        android:background="#ccc"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_below="@+id/distin" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="150dp"
-                    android:id="@+id/text_distin"
-                    android:visibility="visible"
-                    android:layout_margin="6dp"
-                    android:layout_below="@+id/view1" />
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="150dp"
-                    android:id="@+id/edit_distin"
-                    android:layout_margin="6dp"
-                    android:visibility="gone"
-                    android:background="@null"
-                    android:layout_below="@+id/view1" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/button_add_distin"
-                    android:background="#00FF0000"
-                    android:text="추가"
-                    android:visibility="visible"
-                    android:layout_marginRight="-30dp"
-                    android:layout_marginBottom="-15dp"
-                    android:layout_alignBottom="@+id/text_distin"
-                    android:layout_alignEnd="@+id/text_distin" />
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/button_save_distin"
-                    android:background="#00FF0000"
-                    android:layout_marginRight="-30dp"
-                    android:layout_marginBottom="-15dp"
-                    android:layout_alignBottom="@+id/text_distin"
-                    android:layout_alignEnd="@+id/edit_distin"
-                    android:text="확인"
-                    android:visibility="gone"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="150dp"
+                        android:id="@+id/text_distin"
+                        android:visibility="visible"
+                        android:layout_margin="6dp"
+                        android:layout_below="@+id/view1" />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="150dp"
+                        android:id="@+id/edit_distin"
+                        android:layout_margin="6dp"
+                        android:visibility="gone"
+                        android:background="@null"
+                        android:layout_below="@+id/view1" />
+                </RelativeLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_add_distin"
+                android:background="#00FF0000"
+                android:text="추가"
+                android:visibility="visible"
+                android:layout_below="@+id/re_distin"
+                android:layout_alignParentEnd="true"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_save_distin"
+                android:background="#00FF0000"
+                android:text="확인"
+                android:visibility="gone"
+                android:layout_below="@+id/re_distin"
+                android:layout_alignParentEnd="true"/>
             </RelativeLayout>
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
