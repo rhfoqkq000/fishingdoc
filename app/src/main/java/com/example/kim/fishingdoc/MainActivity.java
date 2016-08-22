@@ -2,22 +2,20 @@ package com.example.kim.fishingdoc;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.example.kim.fishingdoc.check.CheckFragment;
 import com.example.kim.fishingdoc.fish.FishFragment;
 import com.example.kim.fishingdoc.weather.Weather_List;
-
+//
 public class  MainActivity extends AppCompatActivity implements AHBottomNavigation.OnTabSelectedListener {
 
+    private final long FINISH_INTERVAL_TIME = 2000;
+    private long backPressedTime = 0;
     AHBottomNavigation bottomNavigation;
 
     @Override
@@ -28,6 +26,7 @@ public class  MainActivity extends AppCompatActivity implements AHBottomNavigati
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+
 
         bottomNavigation = (AHBottomNavigation)findViewById(R.id.bottom_id);
         bottomNavigation.setOnTabSelectedListener(this);
@@ -71,6 +70,18 @@ public class  MainActivity extends AppCompatActivity implements AHBottomNavigati
         } else if (position == 2) {
             CheckFragment checkFragment = new CheckFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id, checkFragment).commit();
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        long tempTime = System.currentTimeMillis();
+        long intervalTime = tempTime - backPressedTime;
+        if(0<=intervalTime && FINISH_INTERVAL_TIME >= intervalTime){
+            super.onBackPressed();
+        }else{
+            backPressedTime = tempTime;
+            Toast.makeText(getApplicationContext(), "'뒤로'버튼을 한번 더 누르시면 종료됩니다.", Toast.LENGTH_SHORT).show();
         }
     }
 }

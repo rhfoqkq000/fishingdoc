@@ -1,5 +1,9 @@
 package com.example.kim.fishingdoc.weather;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.kim.fishingdoc.Json;
 import com.example.kim.fishingdoc.Json2;
@@ -61,7 +66,10 @@ public class Weather_List extends Fragment {
     ArrayList<String> sido_en = new ArrayList<String>();
     ArrayList<String> location = new ArrayList<String>();
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 041fc26cddae2351798648681174f442bf65445c
     //oncreate rootview /바깥 getactivity
     @Nullable
     @Override
@@ -79,6 +87,7 @@ public class Weather_List extends Fragment {
         hour = date3.split(":")[0];
         min = date3.split(":")[1];
         sec = date3.split(":")[2];
+<<<<<<< HEAD
 
         try{
             json = new Json();
@@ -96,6 +105,81 @@ public class Weather_List extends Fragment {
         }catch(Exception e){
             e.printStackTrace();
         }
+=======
+//
+//        try{
+//            json = new Json();
+//            json.execute(url+"getCido");
+//            Log.i("hash떴냐", ""+hash);
+//
+//            madapter = new Weather_ListView();
+//            mlist = (ListView) getActivity().findViewById(R.id.listView);
+////                Log.i("list 생성!!", "");
+//        }catch(Exception e){
+//            e.printStackTrace();
+//        }
+//        mlist.setAdapter(madapter);
+//
+//        for(int i=0; i<hash.get("sido_kr").size(); i++){
+//            madapter.addItem(ContextCompat.getDrawable(getContext(),R.drawable.wave1), hash.get("sido_kr").get(i));
+//
+//            mlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                @Override
+//                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                    Weather_ListData mData = madapter.mlistDataWeather.get(position);
+//                    Log.i("누른거 : ", "" + mData.mtext);
+//                    String en = json.getsido(mData.mtext).toString();
+//                    String loc = json.getlocation(mData.mtext).toString();
+//                    Log.i("eng : " + en, " / loc : " + loc);
+//
+//                    try {
+//                        locEncode = URLEncoder.encode(loc, "UTF-8");
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                    String add = url+"sidoMoon/sidocode/"+locEncode+"/"+year+"/"+month;
+//                    Log.i("url : ", add);
+//
+//                    json2 = new Json2();
+//                    json2.execute(url + en + "/" + year + month);
+//
+//                    json3 = new Json3();
+//                    json3.execute(add);
+//
+//                    Handler handler = new Handler();
+//                    new Handler().postDelayed(new Runnable() {// 1 초 후에 실행
+//
+//                        @Override
+//                        public void run() {
+//                            String luna = json2.getLuna(day).toString();
+//                            String height = json2.getHeight(day).toString();
+//                            String moonRise = json3.getRise(day).toString();
+//                            String moonIng = json3.getIng(day).toString();
+//                            String moonSet = json3.getSet(day).toString();
+//                            Log.e("오늘 음력 : ", luna);
+//                            Log.e("오늘 간만 : ", height);
+//                            Log.e("오늘 월출 : ", moonRise);
+//                            Log.e("오늘 남중 : ", moonIng);
+//                            Log.e("오늘 월몰 : ", moonSet);
+//                        }
+//                    }, 2000);
+//
+//                    Log.i("위도", "" + json.latitude.get(position));
+//                    Log.i("경도", "" + json.longitude.get(position));
+//
+//                    Fragment weatherfragment =  new WeatherFragment();
+//                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_id, weatherfragment).commit();
+//                }
+//            });
+        json = new Json();
+        json.execute(url+"getCido");
+        Log.i("실행!!", "");
+
+        madapter = new Weather_ListView();
+        mlist = (ListView) rootView.findViewById(R.id.listView);
+        Log.i("list 생성!!", "");
+>>>>>>> 041fc26cddae2351798648681174f442bf65445c
 
                 mlist.setAdapter(madapter);
                 Log.i("두번째 execute list : ", "" + hash.get("sido_kr"));
@@ -123,6 +207,7 @@ public class Weather_List extends Fragment {
                 String add = url+"sidoMoon/sidocode/"+locEncode+"/"+year+"/"+month;
                 Log.i("url : ", add);
 
+<<<<<<< HEAD
                 try{
                     json2 = new Json2();
                     hash2 = json2.execute(url + en + "/" + year + month).get();
@@ -159,6 +244,36 @@ public class Weather_List extends Fragment {
 //                Log.i("경도", "" + longitude.get(i));
 //                Log.i("음력", "" + json2.luna.get(i));
 //                Log.i("월출", "" + json3.moonRise.get(i));
+=======
+                json2 = new Json2();
+                json2.execute(url + en + "/" + year + month);
+
+                json3 = new Json3();
+                json3.execute(add);
+
+                Handler handler = new Handler();
+                new Handler().postDelayed(new Runnable() {// 1 초 후에 실행
+
+                    @Override
+                    public void run() {
+                        String luna = json2.getLuna(day).toString();
+                        String height = json2.getHeight(day).toString();
+                        String moonRise = json3.getRise(day).toString();
+                        String moonIng = json3.getIng(day).toString();
+                        String moonSet = json3.getSet(day).toString();
+                        Log.e("오늘 음력 : ", luna);
+                        Log.e("오늘 간만 : ", height);
+                        Log.e("오늘 월출 : ", moonRise);
+                        Log.e("오늘 남중 : ", moonIng);
+                        Log.e("오늘 월몰 : ", moonSet);
+                    }
+                }, 2000);
+
+                Log.i("위도", "" + json.latitude.get(i));
+                Log.i("경도", "" + json.longitude.get(i));
+                Log.i("음력", "" + json2.luna.get(i));
+                Log.i("월출", "" + json3.moonRise.get(i));
+>>>>>>> 041fc26cddae2351798648681174f442bf65445c
 
                 Fragment weatherfragment =  new WeatherFragment();
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_id, weatherfragment).commit();
@@ -173,7 +288,6 @@ public class Weather_List extends Fragment {
 //                myIntent.putExtra("good", gPHP2.townGood.get(i));
 //                myIntent.putExtra("bad", gPHP2.townBad.get(i));
 //                startActivity(myIntent);
-
             }
         });
         return rootView;
