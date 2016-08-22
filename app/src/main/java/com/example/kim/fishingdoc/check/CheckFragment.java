@@ -20,15 +20,17 @@ import java.util.ArrayList;
  * Created by kim on 2016-08-17.
  */
 public class CheckFragment extends Fragment {
-    private final String recyclerViewTitleText[] = {"fish1", "fish2", "fish3", "fish4", "fish5", "fish6", "fish7", "fish8", "fish9", "fish10", "fish11", "fish12",
-            "fish1", "fish2", "fish3", "fish4", "fish5", "fish6", "fish7", "fish8", "fish9", "fish10", "fish11", "fish12",
-            "fish1", "fish2", "fish3", "fish4", "fish5", "fish6"};
+//    private final String recyclerViewTitleText[] = {"fish1", "fish2", "fish3", "fish4", "fish5", "fish6", "fish7", "fish8", "fish9", "fish10", "fish11", "fish12",
+//            "fish1", "fish2", "fish3", "fish4", "fish5", "fish6", "fish7", "fish8", "fish9", "fish10", "fish11", "fish12",
+//            "fish1", "fish2", "fish3", "fish4", "fish5", "fish6"};
+//
+//    private final int recyclerViewImages[] = {R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4,
+//            R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4,
+//            R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4,
+//            R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4};
+    private final ArrayList<String> recyclerViewTitleText = new ArrayList<String>();
 
-    private final int recyclerViewImages[] = {R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4,
-            R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4,
-            R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4,
-            R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4, R.drawable.image4};
-
+    private final ArrayList<String> recyclerViewImages = new ArrayList<String>();
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -93,10 +95,10 @@ public class CheckFragment extends Fragment {
     private ArrayList<AndroidVersion> prepareData() {
 
         ArrayList<AndroidVersion> av = new ArrayList<>();
-        for (int i = 0; i < recyclerViewTitleText.length; i++) {
+        for (int i = 0; i < recyclerViewTitleText.size(); i++) {
             AndroidVersion mAndroidVersion = new AndroidVersion();
-            mAndroidVersion.setAndroidVersionName(recyclerViewTitleText[i]);
-            mAndroidVersion.setrecyclerViewImage(recyclerViewImages[i]);
+            mAndroidVersion.setAndroidVersionName(recyclerViewTitleText);
+            mAndroidVersion.setrecyclerViewImage(recyclerViewImages);
             av.add(mAndroidVersion);
         }
         return av;

@@ -1,7 +1,6 @@
 package com.example.kim.fishingdoc.weather;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -19,7 +18,9 @@ import com.example.kim.fishingdoc.R;
 
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
 
 /**
@@ -41,6 +42,26 @@ public class Weather_List extends Fragment {
     String min;
     String sec;
 
+    HashMap<String, ArrayList<String>> hash = new HashMap<String, ArrayList<String>>();
+    HashMap<String, ArrayList<String>> hash2 = new HashMap<String, ArrayList<String>>();
+    HashMap<String, ArrayList<String>> hash3 = new HashMap<String, ArrayList<String>>();
+
+    ArrayList<String> dataList = new ArrayList<String>();
+    ArrayList<String> heightList = new ArrayList<String>();
+    ArrayList<String> lunaList = new ArrayList<String>();
+    ArrayList<String> dateList = new ArrayList<String>();
+    ArrayList<String> moonRiseList = new ArrayList<String>();
+    ArrayList<String> moonIngList = new ArrayList<String>();
+    ArrayList<String> moonSetList = new ArrayList<String>();
+
+    ArrayList<String> latitude = new ArrayList<String>();
+    ArrayList<String> longitude = new ArrayList<String>();
+
+    ArrayList<String> sido_kr = new ArrayList<String>();
+    ArrayList<String> sido_en = new ArrayList<String>();
+    ArrayList<String> location = new ArrayList<String>();
+
+
     //oncreate rootview /바깥 getactivity
     @Nullable
     @Override
@@ -59,27 +80,29 @@ public class Weather_List extends Fragment {
         min = date3.split(":")[1];
         sec = date3.split(":")[2];
 
+        try{
+            json = new Json();
+            hash = json.execute(url+"getCido").get();
+            Log.i("activity에서 hash떳냐!!", ""+hash);
+            latitude = hash.get("latitude");
+            longitude = hash.get("longitude");
+            sido_kr = hash.get("sido_kr");
+            sido_en = hash.get("sido_en");
+            location = hash.get("location");
 
-        json = new Json();
-        json.execute(url+"getCido");
-        Log.i("실행!!", "");
+            madapter = new Weather_ListView();
+            mlist = (ListView) rootView.findViewById(R.id.listView);
+//            Log.i("list 생성!!", "");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
 
-        madapter = new Weather_ListView();
-        mlist = (ListView) rootView.findViewById(R.id.listView);
-        Log.i("list 생성!!", "");
-
-        Handler handler = new Handler();
-        new Handler().postDelayed(new Runnable() {// 1 초 후에 실행
-
-            @Override
-            public void run() {
                 mlist.setAdapter(madapter);
-                Log.i("두번째 execute list : ", "" + json.sido_kr);
-                for (int i = 0; i < json.sido_kr.size(); i++) {
-                    madapter.addItem(ContextCompat.getDrawable(getContext(), R.drawable.wave1), json.sido_kr.get(i));
+                Log.i("두번째 execute list : ", "" + hash.get("sido_kr"));
+                for (int i = 0; i < hash.get("sido_kr").size(); i++) {
+                    madapter.addItem(ContextCompat.getDrawable(getContext(), R.drawable.wave1), hash.get("sido_kr").get(i));
                 }
-            }
-        }, 1000);
+
 
 
         mlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -87,8 +110,8 @@ public class Weather_List extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Weather_ListData mData = madapter.mlistDataWeather.get(i);
                 Log.i("누른거 : ", "" + mData.mtext);
-                String en = json.getsido(mData.mtext).toString();
-                String loc = json.getlocation(mData.mtext).toString();
+                String en = getsido(mData.mtext).toString();
+                String loc = getlocation(mData.mtext).toString();
                 Log.i("eng : " + en, " / loc : " + loc);
 
                 try {
@@ -100,32 +123,40 @@ public class Weather_List extends Fragment {
                 String add = url+"sidoMoon/sidocode/"+locEncode+"/"+year+"/"+month;
                 Log.i("url : ", add);
 
-                json2 = new Json2();
-                json2.execute(url + en + "/" + year + month);
+                try{
+                    json2 = new Json2();
+                    hash2 = json2.execute(url + en + "/" + year + month).get();
+                    dataList = hash2.get("date");
+                    heightList = hash2.get("height");
+                    lunaList = hash2.get("luna");
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
 
-                json3 = new Json3();
-                json3.execute(add);
+                try{
+                    json3 = new Json3();
+                    hash3 = json3.execute(add).get();
 
-                Handler handler = new Handler();
-                new Handler().postDelayed(new Runnable() {// 1 초 후에 실행
+                    String luna = getLuna(day).toString();
+                    String height = getHeight(day).toString();
+                    String moonRise = getRise(day).toString();
+                    String moonIng = getIng(day).toString();
+                    String moonSet = getSet(day).toString();
+                    Log.e("오늘 음력 : ", luna);
+                    Log.e("오늘 간만 : ", height);
+                    Log.e("오늘 월출 : ", moonRise);
+                    Log.e("오늘 남중 : ", moonIng);
+                    Log.e("오늘 월몰 : ", moonSet);
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
 
-                    @Override
-                    public void run() {
-                        String luna = json2.getLuna(day).toString();
-                        String height = json2.getHeight(day).toString();
-                        String moonRise = json3.getRise(day).toString();
-                        String moonIng = json3.getIng(day).toString();
-                        String moonSet = json3.getSet(day).toString();
-                        Log.e("오늘 음력 : ", luna);
-                        Log.e("오늘 간만 : ", height);
-                        Log.e("오늘 월출 : ", moonRise);
-                        Log.e("오늘 남중 : ", moonIng);
-                        Log.e("오늘 월몰 : ", moonSet);
-                    }
-                }, 2000);
 
-                Log.i("위도", "" + json.latitude.get(i));
-                Log.i("경도", "" + json.longitude.get(i));
+
+
+
+//                Log.i("위도", "" + latitude.get(i));
+//                Log.i("경도", "" + longitude.get(i));
 //                Log.i("음력", "" + json2.luna.get(i));
 //                Log.i("월출", "" + json3.moonRise.get(i));
 
@@ -154,5 +185,81 @@ public class Weather_List extends Fragment {
         String str_date = df.format(new Date());
 
         return str_date;
+    }
+
+
+
+
+    public String getHeight(String day) {
+        int num = 0;
+        for (int i = 0; i < dataList.size(); i++) {
+            if (day.equals(dataList.get(i))) {
+                num = i;
+            }
+        }
+        return heightList.get(num);
+    }
+
+    public String getLuna(String day) {
+        int num = 0;
+        for (int i = 0; i < dataList.size(); i++) {
+            if (day.equals(dataList.get(i))) {
+                num = i;
+            }
+        }
+        return lunaList.get(num);
+    }
+
+
+
+
+    public String getRise(String day) {
+        int num = 0;
+        for (int i = 0; i < dateList.size(); i++) {
+            if (day.equals(dateList.get(i))) {
+                num = i;
+            }
+        }
+        return moonRiseList.get(num);
+    }
+
+    public String getIng(String day) {
+        int num = 0;
+        for (int i = 0; i < dateList.size(); i++) {
+            if (day.equals(dateList.get(i))) {
+                num = i;
+            }
+        }
+        return moonIngList.get(num);
+    }
+
+    public String getSet(String day) {
+        int num = 0;
+        for (int i = 0; i < dateList.size(); i++) {
+            if (day.equals(dateList.get(i))) {
+                num = i;
+            }
+        }
+        return moonSetList.get(num);
+    }
+
+    public String getsido(String sido) {
+        int sidoNum = 0;
+        for (int i = 0; i < sido_kr.size(); i++) {
+            if (sido == sido_kr.get(i)) {
+                sidoNum = i;
+            }
+        }
+        return sido_en.get(sidoNum);
+    }
+
+    public String getlocation(String sido) {
+        int locNum = 0;
+        for (int i = 0; i < sido_kr.size(); i++) {
+            if (sido == sido_kr.get(i)) {
+                locNum = i;
+            }
+        }
+        return location.get(locNum);
     }
 }

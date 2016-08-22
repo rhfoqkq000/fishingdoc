@@ -12,20 +12,22 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Ryu on 2016-07-28.
  */
 
-public class Json2 extends AsyncTask<String, String, String> {
+public class Json2 extends AsyncTask<String, String, HashMap<String, ArrayList<String>>> {
     public static ArrayList<String> date = new ArrayList<>();
     public static ArrayList<String> height = new ArrayList<>();
     public static ArrayList<String> luna = new ArrayList<>();
-
     String addSt;
 
     @Override
-    protected String doInBackground(String... params) {
+    protected HashMap<String, ArrayList<String>> doInBackground(String... params) {
+        HashMap<String, ArrayList<String>> dhl = new HashMap<String, ArrayList<String>>();
+
         StringBuilder jsonHtml = new StringBuilder();
         try {
             URL phpUrl = new URL(params[0]);
@@ -45,52 +47,60 @@ public class Json2 extends AsyncTask<String, String, String> {
                     br.close();
                 }
                 conn.disconnect(); //메모리누수방지
+
+
+                try {
+                    // PHP에서 받아온 JSON 데이터를 JSON오브젝트로 변환
+                    JSONArray jArray = new JSONArray(jsonHtml.toString());
+                    jArray.get(0);
+                    JSONObject jObject;
+                    date.clear();
+                    height.clear();
+                    luna.clear();
+                    for (int i = 1; i < jArray.length()-1; i++) {
+                        jObject = jArray.getJSONObject(i);
+                        date.add(i - 1, jObject.getString("data"));
+                        height.add(i - 1, jObject.getString("height"));
+//                Log.e("height : ",""+jObject.getString("height"));
+                        luna.add(i - 1, jObject.getString("luna"));
+//                Log.e("json2<Luna> : ",""+jObject.getString("luna"));
+
+                        dhl.put("date", date);
+                        dhl.put("height", height);
+                        dhl.put("luna", luna);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return jsonHtml.toString();
+        return dhl;
     }
 
     protected void onPostExecute(String str) {
-        try {
-            // PHP에서 받아온 JSON 데이터를 JSON오브젝트로 변환
-            JSONArray jArray = new JSONArray(str);
-            jArray.get(0);
-            JSONObject jObject;
-            date.clear();
-            height.clear();
-            luna.clear();
-            for (int i = 1; i < jArray.length()-1; i++) {
-                jObject = jArray.getJSONObject(i);
-                date.add(i - 1, jObject.getString("data"));
-                height.add(i - 1, jObject.getString("height"));
-//                Log.e("height : ",""+jObject.getString("height"));
-                luna.add(i - 1, jObject.getString("luna"));
-//                Log.e("json2<Luna> : ",""+jObject.getString("luna"));
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+
     }
 
-    public String getHeight(String day) {
-        int num = 0;
-        for (int i = 0; i < date.size(); i++) {
-            if (day.equals(date.get(i))) {
-                num = i;
-            }
-        }
-        return height.get(num);
-    }
+//    public String getHeight(String day) {
+//        int num = 0;
+//        for (int i = 0; i < date.size(); i++) {
+//            if (day.equals(date.get(i))) {
+//                num = i;
+//            }
+//        }
+//        return height.get(num);
+//    }
 
-    public String getLuna(String day) {
-        int num = 0;
-        for (int i = 0; i < date.size(); i++) {
-            if (day.equals(date.get(i))) {
-                num = i;
-            }
-        }
-        return luna.get(num);
-    }
+//    public String getLuna(String day) {
+//        int num = 0;
+//        for (int i = 0; i < date.size(); i++) {
+//            if (day.equals(date.get(i))) {
+//                num = i;
+//            }
+//        }
+//        return luna.get(num);
+//    }
 }

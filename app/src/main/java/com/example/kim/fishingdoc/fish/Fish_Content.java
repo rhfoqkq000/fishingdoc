@@ -1,5 +1,6 @@
 package com.example.kim.fishingdoc.fish;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -7,19 +8,34 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.kim.fishingdoc.R;
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
 
 /**
  * Created by kim on 2016-08-18.
  */
 public class Fish_Content extends AppCompatActivity {
-
+    int fish;
+    String fish_id2 = String.valueOf(fish);
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fish_content);
+
+        Intent intent = getIntent();
+        ArrayList<String> titleText = intent.getExtras().getStringArrayList("titleText");
+        ArrayList<String> imgUrl = intent.getExtras().getStringArrayList("imgUrl");
+        fish = intent.getExtras().getInt("fish");
+        TextView content_text = (TextView)findViewById(R.id.content_text);
+        content_text.setText(titleText.get(fish));
+
+        ImageView imv = (ImageView)findViewById(R.id.content_image);
+        Picasso.with(getApplicationContext()).load(imgUrl.get(fish)).into(imv);
 
         Toolbar toolbar1 = (Toolbar) findViewById(R.id.fish_toolbar);
         setSupportActionBar(toolbar1);
@@ -28,7 +44,18 @@ public class Fish_Content extends AppCompatActivity {
 
         final EditText edit_distin = (EditText)findViewById(R.id.edit_distin);
         final TextView text_distin = (TextView)findViewById(R.id.text_distin);
-        text_distin.setText("특징 메롱메롱메롱!");
+//        text_distin.setText("특징 메롱메롱메롱!");
+        final EditText edit_habit = (EditText)findViewById(R.id.edit_habit);
+        final TextView text_habit = (TextView)findViewById(R.id.text_habit);
+        final EditText edit_live = (EditText)findViewById(R.id.edit_live);
+        final TextView text_live = (TextView)findViewById(R.id.text_live);
+        final EditText edit_bait = (EditText)findViewById(R.id.edit_bait);
+        final TextView text_bait = (TextView)findViewById(R.id.text_bait);
+        final EditText edit_catched = (EditText)findViewById(R.id.edit_catched);
+        final TextView text_catched = (TextView)findViewById(R.id.text_catched);
+
+        getFishInfo getFishInfo = new getFishInfo(fish_id2+"1", fish_id2+"2", fish_id2+"3", fish_id2+"4", fish_id2+"5", text_distin, text_habit, text_live, text_bait, text_catched, fish);
+        getFishInfo.execute("http://45.76.96.142:3000/write");
 
         final Button button_add_distin = (Button)findViewById(R.id.button_add_distin);
         final Button button_save_distin = (Button)findViewById(R.id.button_save_distin);
@@ -55,16 +82,18 @@ public class Fish_Content extends AppCompatActivity {
                 text_distin.setVisibility(View.VISIBLE);
                 button_add_distin.setVisibility(View.VISIBLE);
                 button_save_distin.setVisibility(View.INVISIBLE);
+                String fish_id = fish+"1";
 
                 String temp = edit_distin.getText().toString();
                 text_distin.setText(temp);
+                writeFishTask writeFishTask = new writeFishTask(fish_id, "distin", edit_distin.getText().toString(), text_distin);
+                writeFishTask.execute("http://45.76.96.142:3000/write/");
             }
         });
 
 
-        final EditText edit_habit = (EditText)findViewById(R.id.edit_habit);
-        final TextView text_habit = (TextView)findViewById(R.id.text_habit);
-        text_habit.setText("습성~~");
+
+//        text_habit.setText("습성~~");
 
         final Button button_add_habit = (Button)findViewById(R.id.button_add_habit);
         final Button button_save_habit = (Button)findViewById(R.id.button_save_habit);
@@ -91,14 +120,16 @@ public class Fish_Content extends AppCompatActivity {
                 text_habit.setVisibility(View.VISIBLE);
                 button_add_habit.setVisibility(View.VISIBLE);
                 button_save_habit.setVisibility(View.INVISIBLE);
+                String fish_id = fish+"2";
 
                 String temp = edit_habit.getText().toString();
                 text_habit.setText(temp);
+                writeFishTask writeFishTask = new writeFishTask(fish_id, "habit", edit_habit.getText().toString(), text_habit);
+                writeFishTask.execute("http://45.76.96.142:3000/write/");
             }
         });
-        final EditText edit_live = (EditText)findViewById(R.id.edit_live);
-        final TextView text_live = (TextView)findViewById(R.id.text_live);
-        text_live.setText("서식지");
+
+//        text_live.setText("서식지");
 
         final Button button_add_live = (Button)findViewById(R.id.button_add_live);
         final Button button_save_live = (Button)findViewById(R.id.button_save_live);
@@ -125,15 +156,17 @@ public class Fish_Content extends AppCompatActivity {
                 text_live.setVisibility(View.VISIBLE);
                 button_add_live.setVisibility(View.VISIBLE);
                 button_save_live.setVisibility(View.INVISIBLE);
+                String fish_id = fish+"3";
 
                 String temp = edit_live.getText().toString();
                 text_live.setText(temp);
+                writeFishTask writeFishTask = new writeFishTask(fish_id, "live", edit_live.getText().toString(), text_live);
+                writeFishTask.execute("http://45.76.96.142:3000/write/");
             }
         });
 
-        final EditText edit_bait = (EditText)findViewById(R.id.edit_bait);
-        final TextView text_bait = (TextView)findViewById(R.id.text_bait);
-        text_bait.setText("미끼");
+
+//        text_bait.setText("미끼");
 
         final Button button_add_bait = (Button)findViewById(R.id.button_add_bait);
         final Button button_save_bait = (Button)findViewById(R.id.button_save_bait);
@@ -160,15 +193,15 @@ public class Fish_Content extends AppCompatActivity {
                 text_bait.setVisibility(View.VISIBLE);
                 button_add_bait.setVisibility(View.VISIBLE);
                 button_save_bait.setVisibility(View.INVISIBLE);
+                String fish_id = fish+"4";
 
                 String temp = edit_bait.getText().toString();
                 text_bait.setText(temp);
             }
         });
 
-        final EditText edit_catched = (EditText)findViewById(R.id.edit_catched);
-        final TextView text_catched = (TextView)findViewById(R.id.text_catched);
-        text_catched.setText("잡는방법");
+
+//        text_catched.setText("잡는방법");
 
         final Button button_add_catched = (Button)findViewById(R.id.button_add_catched);
         final Button button_save_catched = (Button)findViewById(R.id.button_save_catched);
@@ -195,9 +228,12 @@ public class Fish_Content extends AppCompatActivity {
                 text_catched.setVisibility(View.VISIBLE);
                 button_add_catched.setVisibility(View.VISIBLE);
                 button_save_catched.setVisibility(View.INVISIBLE);
+                String fish_id = fish+"5";
 
                 String temp = edit_catched.getText().toString();
                 text_catched.setText(temp);
+                writeFishTask writeFishTask = new writeFishTask(fish_id, "catched", edit_catched.getText().toString(), text_catched);
+                writeFishTask.execute("http://45.76.96.142:3000/write/");
             }
         });
     }

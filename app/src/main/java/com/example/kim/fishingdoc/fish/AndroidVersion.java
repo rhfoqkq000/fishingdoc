@@ -1,25 +1,27 @@
 package com.example.kim.fishingdoc.fish;
 
+import java.util.ArrayList;
+
 /**
  * Created by kim on 2016-08-16.
  */
 public class AndroidVersion {
-    private String recyclerViewTitleText;
-    private int recyclerViewImage;
+    private ArrayList<String> recyclerViewTitleText;
+    private ArrayList<String> recyclerViewImage;
 
-    public String getrecyclerViewTitleText() {
+    public ArrayList<String> getrecyclerViewTitleText() {
         return recyclerViewTitleText;
     }
 
-    public void setAndroidVersionName(String recyclerVietTitleText) {
+    public void setAndroidVersionName(ArrayList<String> recyclerVietTitleText) {
         this.recyclerViewTitleText = recyclerVietTitleText;
     }
 
-    public int getrecyclerViewImage() {
+    public ArrayList<String> getrecyclerViewImage() {
         return recyclerViewImage;
     }
 
-    public void setrecyclerViewImage(int recyclerViewImage) {
+    public void setrecyclerViewImage(ArrayList<String> recyclerViewImage) {
         this.recyclerViewImage = recyclerViewImage;
     }
 }

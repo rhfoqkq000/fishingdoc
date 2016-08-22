@@ -12,19 +12,21 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Ryu on 2016-07-28.
  */
 
-public class Json3 extends AsyncTask<String, String, String> {
+public class Json3 extends AsyncTask<String, String, HashMap<String, ArrayList<String>>> {
     public static ArrayList<String> date = new ArrayList<>();
     public static ArrayList<String> moonRise = new ArrayList<>();
     public static ArrayList<String> moonIng = new ArrayList<>();
     public static ArrayList<String> moonSet = new ArrayList<>();
 
     @Override
-    protected String doInBackground(String... params) {
+    protected HashMap<String, ArrayList<String>> doInBackground(String... params) {
+        HashMap<String, ArrayList<String>> hash = new HashMap<String, ArrayList<String>>();
         StringBuilder jsonHtml = new StringBuilder();
         try {
             URL phpUrl = new URL(params[0]);
@@ -44,61 +46,40 @@ public class Json3 extends AsyncTask<String, String, String> {
                     br.close();
                 }
                 conn.disconnect(); //메모리누수방지
+
+                try {
+                    // PHP에서 받아온 JSON 데이터를 JSON오브젝트로 변환
+                    JSONArray jArray = new JSONArray(jsonHtml.toString());
+                    JSONObject jObject;
+                    date.clear();
+                    moonRise.clear();
+                    moonIng.clear();
+                    moonSet.clear();
+                    for (int i = 0; i < jArray.length(); i++) {
+                        jObject = jArray.getJSONObject(i);
+                        date.add(i, jObject.getString("date"));
+                        moonRise.add(i, jObject.getString("moonRise"));
+                        moonIng.add(i, jObject.getString("moonIng"));
+                        moonSet.add(i, jObject.getString("moonSet"));
+
+                        hash.put("date", date);
+                        hash.put("moonRise", moonRise);
+                        hash.put("moonIng", moonIng);
+                        hash.put("moonSet", moonSet);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return jsonHtml.toString();
+        return hash;
     }
 
     protected void onPostExecute(String str) {
-        try {
-            // PHP에서 받아온 JSON 데이터를 JSON오브젝트로 변환
-            JSONArray jArray = new JSONArray(str);
-            JSONObject jObject;
-            date.clear();
-            moonRise.clear();
-            moonIng.clear();
-            moonSet.clear();
-            for (int i = 0; i < jArray.length(); i++) {
-                jObject = jArray.getJSONObject(i);
-                date.add(i, jObject.getString("date"));
-                moonRise.add(i, jObject.getString("moonRise"));
-                moonIng.add(i, jObject.getString("moonIng"));
-                moonSet.add(i, jObject.getString("moonSet"));
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+
     }
 
-    public String getRise(String day) {
-        int num = 0;
-        for (int i = 0; i < date.size(); i++) {
-            if (day.equals(date.get(i))) {
-                num = i;
-            }
-        }
-        return moonRise.get(num);
-    }
 
-    public String getIng(String day) {
-        int num = 0;
-        for (int i = 0; i < date.size(); i++) {
-            if (day.equals(date.get(i))) {
-                num = i;
-            }
-        }
-        return moonIng.get(num);
-    }
-
-    public String getSet(String day) {
-        int num = 0;
-        for (int i = 0; i < date.size(); i++) {
-            if (day.equals(date.get(i))) {
-                num = i;
-            }
-        }
-        return moonSet.get(num);
-    }
 }

@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.kim.fishingdoc.R;
 import com.example.kim.fishingdoc.fish.AndroidVersion;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -19,17 +20,27 @@ import java.util.ArrayList;
 public class AndroidDataAdapter_C extends RecyclerView.Adapter<AndroidDataAdapter_C.ViewHolder> {
     private ArrayList<AndroidVersion> arrayList;
     private Context mcontext;
+    ArrayList<String> imgs, fish;
+
 
     public AndroidDataAdapter_C(Context context, ArrayList<AndroidVersion> android) {
         this.arrayList = android;
         this.mcontext = context;
     }
+    public AndroidDataAdapter_C(Context context, ArrayList<AndroidVersion> android, ArrayList<String> imgs, ArrayList<String> fish) {
+        this.arrayList = android;
+        this.mcontext = context;
+        this.imgs = imgs;
+        this.fish = fish;
+    }
 
     @Override
     public void onBindViewHolder(AndroidDataAdapter_C.ViewHolder holder, int i) {
 
-        holder.textView.setText(arrayList.get(i).getrecyclerViewTitleText());
-        holder.imageView.setImageResource(arrayList.get(i).getrecyclerViewImage());
+        holder.textView.setText(fish.get(i).toString());
+//        holder.imageView.setImageResource(arrayList.get(i).getrecyclerViewImage());
+        Picasso.with(mcontext).load(imgs.get(i)).into(holder.imageView);
+
     }
 
     @Override
