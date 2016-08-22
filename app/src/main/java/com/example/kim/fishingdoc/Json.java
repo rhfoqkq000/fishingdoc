@@ -12,12 +12,15 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Ryu on 2016-07-28.
  */
 
-public class Json extends AsyncTask<String, String, String> {
+public class Json extends AsyncTask<String, String, HashMap<String, ArrayList<String>>> {
+
+    HashMap<String, ArrayList<String>> hash = new HashMap<String, ArrayList<String>>();
     public static ArrayList<String> sido_kr = new ArrayList<>();
     public static ArrayList<String> sido_en = new ArrayList<>();
     public static ArrayList<Double> latitude = new ArrayList<>();
@@ -29,7 +32,7 @@ public class Json extends AsyncTask<String, String, String> {
     String addSt;
 
     @Override
-    protected String doInBackground(String... params) {
+    protected HashMap<String, ArrayList<String>> doInBackground(String... params) {
         StringBuilder jsonHtml = new StringBuilder();
         try {
             URL phpUrl = new URL(params[0]);
@@ -49,49 +52,99 @@ public class Json extends AsyncTask<String, String, String> {
                     br.close();
                 }
                 conn.disconnect(); //메모리누수방지
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return jsonHtml.toString();
-    }
 
-    protected void onPostExecute(String str) {
-        try {
-            // PHP에서 받아온 JSON 데이터를 JSON오브젝트로 변환
-            JSONArray jArray = new JSONArray(str);
-            JSONObject jObject;
-            luna.clear();
-            sido_kr.clear();
-            sido_en.clear();
-            longitude.clear();
-            latitude.clear();
-            location.clear();
-            addSt = null;
 
-            for (int i = 0; i < jArray.length(); i++) {
-                jObject = jArray.getJSONObject(i);
+
+            try{
+                // PHP에서 받아온 JSON 데이터를 JSON오브젝트로 변환
+                JSONArray jArray = new JSONArray(jsonHtml.toString());
+                JSONObject jObject;
+                luna.clear();
+                sido_kr.clear();
+                sido_en.clear();
+                longitude.clear();
+                latitude.clear();
+                location.clear();
+                addSt = null;
+
+                ArrayList<String> longitude2 = new ArrayList<String>();
+                for(Double d:longitude)
+                longitude2.add(d.toString());
+
+
+                for (int i = 0; i < jArray.length(); i++) {
+                    jObject = jArray.getJSONObject(i);
 //                if (jObject.has("luna")) {
 //                    luna.add(i, jObject.getString("luna"));
 //                }
-                sido_kr.add(i, jObject.getString("sido_kr"));
-                sido_en.add(i, jObject.getString("sido_en"));
-                longitude.add(i, jObject.getDouble("longitude"));
-                latitude.add(i, jObject.getDouble("latitude"));
-                location.add(i, jObject.getString("location"));
+                    sido_kr.add(i, jObject.getString("sido_kr"));
+                    sido_en.add(i, jObject.getString("sido_en"));
+                    longitude.add(i, jObject.getDouble("longitude"));
+                    latitude.add(i, jObject.getDouble("latitude"));
+                    location.add(i, jObject.getString("location"));
+
+                    hash.put("sido_kr", sido_kr);
+                    hash.put("sido_en", sido_en);
+                    hash.put("longitude", longitude2);
+
 //                addSt = address.get(i);
 //                add.add(i, addSt);
 //                    Log.i("테스트 세번째", "First : " + first + " / Second : " + second);
-            }
+                }
 //            Collections.sort(sido_kr, String.CASE_INSENSITIVE_ORDER);
 //            Log.i("두번째 excute 끝났다", "" + sido_kr);
 //                String zzzz= "" + second2;
 //                String zzz= "" + add;
 //                String zz = "" + address;
 //                tv.setText(zzzz);
-        } catch (JSONException e) {
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
+        return hash;
+    }
+
+    protected void onPostExecute(String str) {
+//        try {
+//            // PHP에서 받아온 JSON 데이터를 JSON오브젝트로 변환
+//            JSONArray jArray = new JSONArray(str);
+//            JSONObject jObject;
+//            luna.clear();
+//            sido_kr.clear();
+//            sido_en.clear();
+//            longitude.clear();
+//            latitude.clear();
+//            location.clear();
+//            addSt = null;
+//
+//            for (int i = 0; i < jArray.length(); i++) {
+//                jObject = jArray.getJSONObject(i);
+////                if (jObject.has("luna")) {
+////                    luna.add(i, jObject.getString("luna"));
+////                }
+//                sido_kr.add(i, jObject.getString("sido_kr"));
+//                sido_en.add(i, jObject.getString("sido_en"));
+//                longitude.add(i, jObject.getDouble("longitude"));
+//                latitude.add(i, jObject.getDouble("latitude"));
+//                location.add(i, jObject.getString("location"));
+////                addSt = address.get(i);
+////                add.add(i, addSt);
+////                    Log.i("테스트 세번째", "First : " + first + " / Second : " + second);
+//            }
+////            Collections.sort(sido_kr, String.CASE_INSENSITIVE_ORDER);
+////            Log.i("두번째 excute 끝났다", "" + sido_kr);
+////                String zzzz= "" + second2;
+////                String zzz= "" + add;
+////                String zz = "" + address;
+////                tv.setText(zzzz);
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
+//        }
     }
 
     public String getsido(String sido) {
