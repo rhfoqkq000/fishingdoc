@@ -16,7 +16,7 @@ import com.example.kim.fishingdoc.check.CheckFragment;
 import com.example.kim.fishingdoc.fish.FishFragment;
 import com.example.kim.fishingdoc.weather.Weather_List;
 
-public class MainActivity extends AppCompatActivity implements AHBottomNavigation.OnTabSelectedListener {
+public class  MainActivity extends AppCompatActivity implements AHBottomNavigation.OnTabSelectedListener {
 
     AHBottomNavigation bottomNavigation;
 
