@@ -22,7 +22,9 @@ import java.util.HashMap;
 class getFishTask extends AsyncTask<String, String, HashMap<String, ArrayList<String>>> {
     ArrayList<String> fishName = new ArrayList<String>();
     ArrayList<String> fishImg = new ArrayList<String>();
-
+    ArrayList<String> id = new ArrayList<String>();
+    ArrayList<String> fish_id = new ArrayList<String>();
+    ArrayList<String> distin = new ArrayList<String>();
     static HashMap<String, ArrayList<String>> hash;
 
     @Override
@@ -45,11 +47,20 @@ class getFishTask extends AsyncTask<String, String, HashMap<String, ArrayList<St
 
             for (int i = 0; i < jArray.length(); i++) {
                 JSONObject topLevel = jArray.getJSONObject(i);
+                JSONObject topLevel2 = (JSONObject)topLevel.get("doc");
+
+
                 fishName.add(i, ObjToString(topLevel.get("name")));
-                fishImg.add(i, ObjToString(topLevel.get("img_real")));
+                fishImg.add(i, ObjToString(topLevel.get("img_path")));
+                id.add(i, ObjToString(topLevel.get("id")));
+                fish_id.add(i, ObjToString(topLevel.get("fish_id")));
+                distin.add(i, ObjToString(topLevel2.get("distin")));
             }
             hash.put("fishName", fishName);
             hash.put("fishImg", fishImg);
+            hash.put("id", id);
+            hash.put("fish_id", fish_id);
+            hash.put("distin", distin);
 //            Log.i("getFishTask result떴냐",""+hash);
             urlConnection.disconnect();
         } catch (IOException | JSONException e) {

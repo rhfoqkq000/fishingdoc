@@ -23,12 +23,13 @@ import java.util.HashMap;
 public class Fish_Content extends AppCompatActivity {
     int id;
 //    String fish_id2 = String.valueOf(fish);
+ArrayList<String> idList = new ArrayList<String>();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fish_content);
         ArrayList<String> distin = new ArrayList<String>();
-        final ArrayList<String> idList = new ArrayList<String>();
         int fish;
         HashMap<String, ArrayList<String>> hash = new HashMap<String, ArrayList<String>>();
 
@@ -107,7 +108,7 @@ public class Fish_Content extends AppCompatActivity {
                 String temp = edit_distin.getText().toString();
                 text_distin.setText(temp);
                 writeFishTask writeFishTask = new writeFishTask(idList.get(id), "distin", edit_distin.getText().toString(), text_distin);
-                writeFishTask.execute("http://45.76.96.142:3000/write/");
+                writeFishTask.execute("http://45.76.96.142:3000/fish/");
             }
         });
 

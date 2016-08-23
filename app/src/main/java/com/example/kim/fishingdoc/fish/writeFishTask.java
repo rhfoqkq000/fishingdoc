@@ -4,7 +4,6 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.TextView;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -31,21 +30,24 @@ class writeFishTask extends AsyncTask<String, String, String> {
     @Override
     protected String doInBackground(String... strings) {
         try {
-            URL url = new URL(strings[0]+fish_id+"/edit/"+param);
+            URL url = new URL(strings[0]+fish_id+"/edit");
+            Log.i("URL제대로떴냐",""+url);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestProperty("Content-Type", "application/json");
             JSONObject obj = new JSONObject();
+            JSONObject obj2 = new JSONObject();
             obj.put(param, content);
-//            Log.i("obj떴냐",""+obj.toString());
+            obj2.put("doc", obj);
+            Log.i("obj2떴냐",""+obj2.toString());
             urlConnection.setRequestMethod("POST");
-            Log.i("url뭐냐",""+url);
+//            Log.i("url뭐냐",""+url);
 //            OutputStreamWriter osw = new OutputStreamWriter(urlConnection.getOutputStream(), "UTF-8");
 //            osw.write(obj.toString());
 //            osw.flush();
 //            osw.close();
             OutputStreamWriter os = new OutputStreamWriter(
                     urlConnection.getOutputStream());
-            os.write(obj.toString());
+            os.write(obj2.toString());
             os.flush();
 
             InputStream stream = new BufferedInputStream(urlConnection.getInputStream());
@@ -56,19 +58,19 @@ class writeFishTask extends AsyncTask<String, String, String> {
             while ((inputString = bufferedReader.readLine()) != null) {
                 builder.append(inputString);
             }
-            JSONArray jArray = new JSONArray(builder.toString());
-            for (int i = 0; i < jArray.length(); i++) {
-                JSONObject topLevel = jArray.getJSONObject(i);
-//                fishName.add(i, ObjToString(topLevel.get("name")));
-                result = String.valueOf(topLevel.get(param));
-                Log.i("result떳어",""+result);
-            }
+            result = content;
+//            JSONArray jArray = new JSONArray(builder.toString());
+//            for (int i = 0; i < jArray.length(); i++) {
+//                JSONObject topLevel = jArray.getJSONObject(i);
+////                fishName.add(i, ObjToString(topLevel.get("name")));
+//                result = String.valueOf(topLevel.get(param));
+//                Log.i("result떳어",""+result);
+//            }
             urlConnection.disconnect();
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
         return result;
-
     }
 
     @Override

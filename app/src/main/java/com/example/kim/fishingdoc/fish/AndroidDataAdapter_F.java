@@ -36,7 +36,7 @@ public class AndroidDataAdapter_F extends RecyclerView.Adapter<AndroidDataAdapte
 
     @Override
     public void onBindViewHolder(AndroidDataAdapter_F.ViewHolder holder, int i) {
-
+//        Log.i("어댑터에서imgs떴냐용",""+imgs.get(i));
         holder.textView.setText(fish.get(i).toString());
 //        holder.imageView.setImageResource(arrayList.get(i).getrecyclerViewImage());
         Picasso.with(mcontext).load(imgs.get(i)).into(holder.imageView);

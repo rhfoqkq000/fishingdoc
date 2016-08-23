@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <android.support.design.widget.AppBarLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/fish_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+            <TextView
+                android:id="@+id/fish_toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FishingDoc"
+                android:textColor="@android:color/white"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_gravity="center" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/content_image"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/fish3" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/content_text"
+                android:text="제목"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"/>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            card_view:contentPadding="10dp"
+            card_view:cardElevation="2dp"
+            card_view:cardCornerRadius="5dp"
+            android:background="#FFFFFF">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="특징"
+                    android:layout_margin="6dp"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:id="@+id/distin"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:id="@+id/view1"
+                    android:background="#ccc"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@+id/distin" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="150dp"
+                    android:id="@+id/text_distin"
+                    android:visibility="visible"
+                    android:layout_margin="6dp"
+                    android:layout_below="@+id/view1" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="150dp"
+                    android:id="@+id/edit_distin"
+                    android:layout_margin="6dp"
+                    android:visibility="gone"
+                    android:background="@null"
+                    android:layout_below="@+id/view1" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_add_distin"
+                    android:background="#00FF0000"
+                    android:text="추가"
+                    android:visibility="visible"
+                    android:layout_marginRight="-30dp"
+                    android:layout_marginBottom="-15dp"
+                    android:layout_alignBottom="@+id/text_distin"
+                    android:layout_alignEnd="@+id/text_distin" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_save_distin"
+                    android:background="#00FF0000"
+                    android:layout_marginRight="-30dp"
+                    android:layout_marginBottom="-15dp"
+                    android:layout_alignBottom="@+id/text_distin"
+                    android:layout_alignEnd="@+id/edit_distin"
+                    android:text="확인"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            card_view:contentPadding="10dp"
+            card_view:cardElevation="2dp"
+            card_view:cardCornerRadius="5dp"
+            android:background="#FFFFFF">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="습성"
+                    android:layout_margin="6dp"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:id="@+id/habit"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:id="@+id/view2"
+                    android:background="#ccc"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@+id/habit" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="150dp"
+                    android:id="@+id/text_habit"
+                    android:visibility="visible"
+                    android:layout_margin="6dp"
+                    android:layout_below="@+id/view2" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="150dp"
+                    android:id="@+id/edit_habit"
+                    android:layout_margin="6dp"
+                    android:visibility="gone"
+                    android:background="@null"
+                    android:layout_below="@+id/view2" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_add_habit"
+                    android:background="#00FF0000"
+                    android:text="추가"
+                    android:visibility="visible"
+                    android:layout_marginRight="-30dp"
+                    android:layout_marginBottom="-15dp"
+                    android:layout_alignBottom="@+id/text_habit"
+                    android:layout_alignEnd="@+id/text_habit" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_save_habit"
+                    android:background="#00FF0000"
+                    android:layout_marginRight="-30dp"
+                    android:layout_marginBottom="-15dp"
+                    android:layout_alignBottom="@+id/text_habit"
+                    android:layout_alignEnd="@+id/edit_habit"
+                    android:text="확인"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            card_view:contentPadding="10dp"
+            card_view:cardElevation="2dp"
+            card_view:cardCornerRadius="5dp"
+            android:background="#FFFFFF">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="서식지"
+                    android:layout_margin="6dp"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:id="@+id/live"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:id="@+id/view3"
+                    android:background="#ccc"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@+id/live" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:id="@+id/text_live"
+                    android:visibility="visible"
+                    android:layout_margin="6dp"
+                    android:layout_below="@+id/view3" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:id="@+id/edit_live"
+                    android:layout_margin="6dp"
+                    android:visibility="gone"
+                    android:background="@null"
+                    android:layout_below="@+id/view3" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_add_live"
+                    android:background="#00FF0000"
+                    android:text="추가"
+                    android:visibility="visible"
+                    android:layout_marginRight="-30dp"
+                    android:layout_marginBottom="-15dp"
+                    android:layout_alignBottom="@+id/text_live"
+                    android:layout_alignEnd="@+id/text_live" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_save_live"
+                    android:background="#00FF0000"
+                    android:layout_marginRight="-30dp"
+                    android:layout_marginBottom="-15dp"
+                    android:layout_alignBottom="@+id/text_live"
+                    android:layout_alignEnd="@+id/edit_live"
+                    android:text="확인"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            card_view:contentPadding="10dp"
+            card_view:cardElevation="2dp"
+            card_view:cardCornerRadius="5dp"
+            android:background="#FFFFFF">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="미끼"
+                    android:layout_margin="6dp"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:id="@+id/bait"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:id="@+id/view4"
+                    android:background="#ccc"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@+id/bait" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:id="@+id/text_bait"
+                    android:visibility="visible"
+                    android:layout_margin="6dp"
+                    android:layout_below="@+id/view4" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:id="@+id/edit_bait"
+                    android:layout_margin="6dp"
+                    android:visibility="gone"
+                    android:background="@null"
+                    android:layout_below="@+id/view4" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_add_bait"
+                    android:background="#00FF0000"
+                    android:text="추가"
+                    android:visibility="visible"
+                    android:layout_marginRight="-30dp"
+                    android:layout_marginBottom="-15dp"
+                    android:layout_alignBottom="@+id/text_bait"
+                    android:layout_alignEnd="@+id/text_bait" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_save_bait"
+                    android:background="#00FF0000"
+                    android:layout_marginRight="-30dp"
+                    android:layout_marginBottom="-15dp"
+                    android:layout_alignBottom="@+id/text_bait"
+                    android:layout_alignEnd="@+id/edit_bait"
+                    android:text="확인"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                card_view:contentPadding="10dp"
+                card_view:cardElevation="2dp"
+                card_view:cardCornerRadius="5dp"
+                android:background="#FFFFFF">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="잡는 법"
+                        android:layout_margin="6dp"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:id="@+id/catched"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:id="@+id/view5"
+                        android:background="#ccc"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_below="@+id/catched" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:id="@+id/text_catched"
+                        android:visibility="visible"
+                        android:layout_margin="6dp"
+                        android:layout_below="@+id/view5" />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:id="@+id/edit_catched"
+                        android:layout_margin="6dp"
+                        android:visibility="gone"
+                        android:background="@null"
+                        android:layout_below="@+id/view5" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_add_catched"
+                        android:background="#00FF0000"
+                        android:text="추가"
+                        android:visibility="visible"
+                        android:layout_marginRight="-30dp"
+                        android:layout_marginBottom="-15dp"
+                        android:layout_alignBottom="@+id/text_catched"
+                        android:layout_alignEnd="@+id/text_catched" />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_save_catched"
+                        android:background="#00FF0000"
+                        android:layout_marginRight="-30dp"
+                        android:layout_marginBottom="-15dp"
+                        android:layout_alignBottom="@+id/text_catched"
+                        android:layout_alignEnd="@+id/edit_catched"
+                        android:text="확인"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

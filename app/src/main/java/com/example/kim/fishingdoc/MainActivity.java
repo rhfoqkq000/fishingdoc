@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
@@ -31,6 +32,7 @@ public class  MainActivity extends AppCompatActivity implements AHBottomNavigati
         bottomNavigation = (AHBottomNavigation)findViewById(R.id.bottom_id);
         bottomNavigation.setOnTabSelectedListener(this);
         this.createNavItems();
+        Log.i("여기까진안전데스1","시팔");
     }
 
     private void createNavItems(){
@@ -53,6 +55,7 @@ public class  MainActivity extends AppCompatActivity implements AHBottomNavigati
 
         //set current item
         bottomNavigation.setCurrentItem(0);
+        Log.i("여기까진안전데스2","시팔");
 
     }
 
@@ -61,12 +64,18 @@ public class  MainActivity extends AppCompatActivity implements AHBottomNavigati
         //show fragment
         if (position == 0) {
             Weather_List weatherList = new Weather_List();
+            Log.i("여기까진안전데스1웨더리스트","시팔");
+
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id, weatherList).commit();
 //            WeatherFragment weatherFragment = new WeatherFragment();
 //            getSupportFragmentManager().beginTransaction().replace(R.id.content_id, weatherFragment).commit();
         } else if (position == 1) {
             FishFragment fishFragment = new FishFragment();
+            Log.i("여기까진안전데스1피쉬","시팔");
+
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id, fishFragment).commit();
+            Log.i("여기까진안전데스2피쉬","시팔");
+
         } else if (position == 2) {
             CheckFragment checkFragment = new CheckFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id, checkFragment).commit();
