@@ -12,7 +12,7 @@ import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.example.kim.fishingdoc.check.CheckFragment;
 import com.example.kim.fishingdoc.fish.FishFragment;
 import com.example.kim.fishingdoc.weather.Weather_List;
-//
+
 public class  MainActivity extends AppCompatActivity implements AHBottomNavigation.OnTabSelectedListener {
 
     private final long FINISH_INTERVAL_TIME = 2000;

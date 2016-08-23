@@ -96,7 +96,10 @@ public class Weather_List extends Fragment {
         }catch(Exception e){
             e.printStackTrace();
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> add2edf9d7122cc1b6a1983ce6aecde87d7546be
 //
 //        try{
 //            json = new Json();
@@ -169,7 +172,11 @@ public class Weather_List extends Fragment {
 
         madapter = new Weather_ListView();
         mlist = (ListView) rootView.findViewById(R.id.listView);
+<<<<<<< HEAD
 //        Log.i("list 생성!!", "");
+=======
+        Log.i("list 생성!!", "");
+>>>>>>> add2edf9d7122cc1b6a1983ce6aecde87d7546be
 
                 mlist.setAdapter(madapter);
 //                Log.i("두번째 execute list : ", "" + hash.get("sido_kr"));
@@ -233,6 +240,10 @@ public class Weather_List extends Fragment {
 //                Log.i("경도", "" + longitude.get(i));
 //                Log.i("음력", "" + json2.luna.get(i));
 //                Log.i("월출", "" + json3.moonRise.get(i));
+<<<<<<< HEAD
+=======
+
+>>>>>>> add2edf9d7122cc1b6a1983ce6aecde87d7546be
                 json2 = new Json2();
                 json2.execute(url + en + "/" + year + month);
 
@@ -249,6 +260,7 @@ public class Weather_List extends Fragment {
                         String moonRise = getRise(day).toString();
                         String moonIng = getIng(day).toString();
                         String moonSet = getSet(day).toString();
+<<<<<<< HEAD
 //                        Log.e("오늘 음력 : ", luna);
 //                        Log.e("오늘 간만 : ", height);
 //                        Log.e("오늘 월출 : ", moonRise);
@@ -261,6 +273,21 @@ public class Weather_List extends Fragment {
 //                Log.i("경도", "" + json.longitude.get(i));
 //                Log.i("음력", "" + json2.luna.get(i));
 //                Log.i("월출", "" + json3.moonRise.get(i));
+=======
+                        Log.e("오늘 음력 : ", luna);
+                        Log.e("오늘 간만 : ", height);
+                        Log.e("오늘 월출 : ", moonRise);
+                        Log.e("오늘 남중 : ", moonIng);
+                        Log.e("오늘 월몰 : ", moonSet);
+                    }
+                }, 2000);
+
+                Log.i("위도", "" + latitude.get(i));
+                Log.i("경도", "" + longitude.get(i));
+                Log.i("음력", "" + json2.luna.get(i));
+                Log.i("월출", "" + json3.moonRise.get(i));
+
+>>>>>>> add2edf9d7122cc1b6a1983ce6aecde87d7546be
 
                 Fragment weatherfragment =  new WeatherFragment();
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.content_id, weatherfragment).commit();
