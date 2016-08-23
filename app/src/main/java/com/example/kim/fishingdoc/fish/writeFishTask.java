@@ -2,6 +2,7 @@ package com.example.kim.fishingdoc.fish;
 
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import org.json.JSONException;
@@ -19,12 +20,14 @@ import java.net.URL;
 class writeFishTask extends AsyncTask<String, String, String> {
     String result, fish_id, param, content = "";
     TextView tv;
+    EditText ed;
 
-    public writeFishTask(String fish_id, String param, String content, TextView tv){
+    public writeFishTask(String fish_id, String param, String content, TextView tv, EditText ed){
         this.fish_id = fish_id;
         this.param = param;
         this.content = content;
         this.tv = tv;
+        this.ed = ed;
     }
 
     @Override
@@ -77,5 +80,6 @@ class writeFishTask extends AsyncTask<String, String, String> {
     protected void onPostExecute(String result) {
 //        Log.i("hash떴냐..",""+result);
         tv.setText(result);
+        ed.setText(result);
     }
 }
