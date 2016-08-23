@@ -39,7 +39,7 @@ public class AndroidDataAdapter_F extends RecyclerView.Adapter<AndroidDataAdapte
 //        Log.i("어댑터에서imgs떴냐용",""+imgs.get(i));
         holder.textView.setText(fish.get(i).toString());
 //        holder.imageView.setImageResource(arrayList.get(i).getrecyclerViewImage());
-        Picasso.with(mcontext).load(imgs.get(i)).into(holder.imageView);
+        Picasso.with(mcontext).load(imgs.get(i)).resize(100, 100).into(holder.imageView);
 
     }
 
