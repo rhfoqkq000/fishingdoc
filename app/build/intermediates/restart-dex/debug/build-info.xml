@@ -4,35 +4,30 @@
     api-level="23"
     density="xxxhdpi"
     format="7"
-    timestamp="95655485656307"
+    timestamp="97495533681095"
     token="-5797173342119517221" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="2222" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="1249" />
     <task
         name="verifier"
-        duration="0" />
+        duration="734" />
 
     <artifact
-        location="C:\FishingDoc\app\build\intermediates\res\resources-debug.ap_"
-        type="RESOURCES" />
+        location="C:\FishingDoc\app\build\outputs\apk\app-debug.apk"
+        type="MAIN" />
 
-    <build timestamp="95343569747259" >
+    <build timestamp="97495533681095" >
         <artifact
             location="C:\FishingDoc\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
-    </build>
-    <build timestamp="95655485656307" >
-        <artifact
-            location="C:\FishingDoc\app\build\intermediates\res\resources-debug.ap_"
-            type="RESOURCES" />
     </build>
 
 </instant-run>
