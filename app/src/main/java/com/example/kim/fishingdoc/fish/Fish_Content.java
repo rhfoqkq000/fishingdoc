@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -69,7 +70,9 @@ ArrayList<String> idList = new ArrayList<String>();
         try{
             getFishTask getFishTask = new getFishTask();
             hash = getFishTask.execute("http://45.76.96.142:3000/fish").get();
-            text_distin.setText(distin.get(id));
+//            Log.i("hash.get이다데스",""+hash.get("distin"));
+            text_distin.setText(hash.get("distin").get(id));
+            edit_distin.setText(hash.get("distin").get(id));
 //            writeFishTask writeFishTask = new writeFishTask(idList.get(id), );
 
         }catch(Exception e){
@@ -90,8 +93,8 @@ ArrayList<String> idList = new ArrayList<String>();
                 button_add_distin.setVisibility(View.INVISIBLE);
                 button_save_distin.setVisibility(View.VISIBLE);
 
-                String temp = (String)text_distin.getText();
-                edit_distin.setText(temp);
+//                String temp = (String)text_distin.getText();
+//                edit_distin.setText(temp);
             }
         });
 
@@ -105,10 +108,12 @@ ArrayList<String> idList = new ArrayList<String>();
                 button_save_distin.setVisibility(View.INVISIBLE);
 //                String fish_id = fish+"1";
 
-                String temp = edit_distin.getText().toString();
-                text_distin.setText(temp);
-                writeFishTask writeFishTask = new writeFishTask(idList.get(id), "distin", edit_distin.getText().toString(), text_distin);
+//                String temp = edit_distin.getText().toString();
+//                text_distin.setText(temp);
+                writeFishTask writeFishTask = new writeFishTask(idList.get(id), "distin", edit_distin.getText().toString(), text_distin, edit_distin);
                 writeFishTask.execute("http://45.76.96.142:3000/fish/");
+                text_distin.setText(edit_distin.getText().toString());
+//                Log.i("저장했따","1");
             }
         });
 
