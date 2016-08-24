@@ -87,7 +87,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:minHeight="150dp"
+                        android:minHeight="100dp"
                         android:id="@+id/text_distin"
                         android:visibility="visible"
                         android:layout_margin="6dp"
@@ -95,7 +95,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:minHeight="150dp"
+                        android:minHeight="100dp"
                         android:id="@+id/edit_distin"
                         android:layout_margin="6dp"
                         android:visibility="gone"
@@ -103,24 +103,24 @@
                         android:textSize="15dp"
                         android:layout_below="@+id/view1" />
                 </RelativeLayout>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button_add_distin"
-                android:background="#00FF0000"
-                android:text="추가"
-                android:visibility="visible"
-                android:layout_below="@+id/re_distin"
-                android:layout_alignParentEnd="true"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button_save_distin"
-                android:background="#00FF0000"
-                android:text="확인"
-                android:visibility="gone"
-                android:layout_below="@+id/re_distin"
-                android:layout_alignParentEnd="true"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_add_distin"
+                    android:background="#00FF0000"
+                    android:text="추가"
+                    android:visibility="visible"
+                    android:layout_below="@+id/re_distin"
+                    android:layout_alignParentEnd="true"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_save_distin"
+                    android:background="#00FF0000"
+                    android:text="확인"
+                    android:visibility="gone"
+                    android:layout_below="@+id/re_distin"
+                    android:layout_alignParentEnd="true"/>
             </RelativeLayout>
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
@@ -134,42 +134,46 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <TextView
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="습성"
-                    android:layout_margin="6dp"
-                    android:textSize="22dp"
-                    android:textStyle="bold"
-                    android:id="@+id/habit"/>
+                    android:id="@+id/re_habit">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="습성"
+                        android:layout_margin="6dp"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:id="@+id/habit"/>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:id="@+id/view2"
-                    android:background="#ccc"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_below="@+id/habit" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:id="@+id/view2"
+                        android:background="#ccc"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_below="@+id/habit" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="150dp"
-                    android:id="@+id/text_habit"
-                    android:visibility="visible"
-                    android:layout_margin="6dp"
-                    android:layout_below="@+id/view2" />
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="150dp"
-                    android:id="@+id/edit_habit"
-                    android:layout_margin="6dp"
-                    android:visibility="gone"
-                    android:background="@null"
-                    android:layout_below="@+id/view2" />
-
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="100dp"
+                        android:id="@+id/text_habit"
+                        android:visibility="visible"
+                        android:layout_margin="6dp"
+                        android:layout_below="@+id/view2" />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="100dp"
+                        android:id="@+id/edit_habit"
+                        android:layout_margin="6dp"
+                        android:visibility="gone"
+                        android:background="@null"
+                        android:layout_below="@+id/view2" />
+                </RelativeLayout>
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -177,21 +181,17 @@
                     android:background="#00FF0000"
                     android:text="추가"
                     android:visibility="visible"
-                    android:layout_marginRight="-30dp"
-                    android:layout_marginBottom="-15dp"
-                    android:layout_alignBottom="@+id/text_habit"
-                    android:layout_alignEnd="@+id/text_habit" />
+                    android:layout_below="@+id/re_habit"
+                    android:layout_alignParentEnd="true"/>
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/button_save_habit"
                     android:background="#00FF0000"
-                    android:layout_marginRight="-30dp"
-                    android:layout_marginBottom="-15dp"
-                    android:layout_alignBottom="@+id/text_habit"
-                    android:layout_alignEnd="@+id/edit_habit"
                     android:text="확인"
-                    android:visibility="gone"/>
+                    android:visibility="gone"
+                    android:layout_below="@+id/re_habit"
+                    android:layout_alignParentEnd="true"/>
             </RelativeLayout>
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
@@ -205,40 +205,44 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <TextView
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="서식지"
-                    android:layout_margin="6dp"
-                    android:textSize="22dp"
-                    android:textStyle="bold"
-                    android:id="@+id/live"/>
+                    android:id="@+id/re_live">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="서식지"
+                        android:layout_margin="6dp"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:id="@+id/live"/>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:id="@+id/view3"
-                    android:background="#ccc"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_below="@+id/live" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:id="@+id/view3"
+                        android:background="#ccc"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_below="@+id/live" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:id="@+id/text_live"
-                    android:visibility="visible"
-                    android:layout_margin="6dp"
-                    android:layout_below="@+id/view3" />
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:id="@+id/edit_live"
-                    android:layout_margin="6dp"
-                    android:visibility="gone"
-                    android:background="@null"
-                    android:layout_below="@+id/view3" />
-
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:id="@+id/text_live"
+                        android:visibility="visible"
+                        android:layout_margin="6dp"
+                        android:layout_below="@+id/view3" />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:id="@+id/edit_live"
+                        android:layout_margin="6dp"
+                        android:visibility="gone"
+                        android:background="@null"
+                        android:layout_below="@+id/view3" />
+                </RelativeLayout>
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -246,21 +250,17 @@
                     android:background="#00FF0000"
                     android:text="추가"
                     android:visibility="visible"
-                    android:layout_marginRight="-30dp"
-                    android:layout_marginBottom="-15dp"
-                    android:layout_alignBottom="@+id/text_live"
-                    android:layout_alignEnd="@+id/text_live" />
+                    android:layout_below="@+id/re_live"
+                    android:layout_alignParentEnd="true"/>
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/button_save_live"
                     android:background="#00FF0000"
-                    android:layout_marginRight="-30dp"
-                    android:layout_marginBottom="-15dp"
-                    android:layout_alignBottom="@+id/text_live"
-                    android:layout_alignEnd="@+id/edit_live"
                     android:text="확인"
-                    android:visibility="gone"/>
+                    android:visibility="gone"
+                    android:layout_below="@+id/re_live"
+                    android:layout_alignParentEnd="true"/>
             </RelativeLayout>
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
@@ -274,6 +274,10 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/re_bait">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -307,7 +311,7 @@
                     android:visibility="gone"
                     android:background="@null"
                     android:layout_below="@+id/view4" />
-
+                </RelativeLayout>
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -315,21 +319,17 @@
                     android:background="#00FF0000"
                     android:text="추가"
                     android:visibility="visible"
-                    android:layout_marginRight="-30dp"
-                    android:layout_marginBottom="-15dp"
-                    android:layout_alignBottom="@+id/text_bait"
-                    android:layout_alignEnd="@+id/text_bait" />
+                    android:layout_below="@+id/re_bait"
+                    android:layout_alignParentEnd="true"/>
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/button_save_bait"
                     android:background="#00FF0000"
-                    android:layout_marginRight="-30dp"
-                    android:layout_marginBottom="-15dp"
-                    android:layout_alignBottom="@+id/text_bait"
-                    android:layout_alignEnd="@+id/edit_bait"
                     android:text="확인"
-                    android:visibility="gone"/>
+                    android:visibility="gone"
+                    android:layout_below="@+id/re_bait"
+                    android:layout_alignParentEnd="true"/>
             </RelativeLayout>
         </android.support.v7.widget.CardView>
             <android.support.v7.widget.CardView
@@ -343,6 +343,10 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/re_catched">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -376,7 +380,7 @@
                         android:visibility="gone"
                         android:background="@null"
                         android:layout_below="@+id/view5" />
-
+                    </RelativeLayout>
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -384,21 +388,17 @@
                         android:background="#00FF0000"
                         android:text="추가"
                         android:visibility="visible"
-                        android:layout_marginRight="-30dp"
-                        android:layout_marginBottom="-15dp"
-                        android:layout_alignBottom="@+id/text_catched"
-                        android:layout_alignEnd="@+id/text_catched" />
+                        android:layout_below="@+id/re_catched"
+                        android:layout_alignParentEnd="true"/>
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/button_save_catched"
                         android:background="#00FF0000"
-                        android:layout_marginRight="-30dp"
-                        android:layout_marginBottom="-15dp"
-                        android:layout_alignBottom="@+id/text_catched"
-                        android:layout_alignEnd="@+id/edit_catched"
                         android:text="확인"
-                        android:visibility="gone"/>
+                        android:visibility="gone"
+                        android:layout_below="@+id/re_catched"
+                        android:layout_alignParentEnd="true"/>
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
         </LinearLayout>
