@@ -33,7 +33,7 @@ class writeFishTask extends AsyncTask<String, String, String> {
     @Override
     protected String doInBackground(String... strings) {
         try {
-            URL url = new URL(strings[0]+fish_id+"/edit");
+            URL url = new URL(strings[0]+"/new");
             Log.i("URL제대로떴냐",""+url);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestProperty("Content-Type", "application/json");
@@ -41,6 +41,7 @@ class writeFishTask extends AsyncTask<String, String, String> {
             JSONObject obj2 = new JSONObject();
             obj.put(param, content);
             obj2.put("doc", obj);
+            obj2.put("fish_id", fish_id);
             Log.i("obj2떴냐",""+obj2.toString());
             urlConnection.setRequestMethod("POST");
 //            Log.i("url뭐냐",""+url);

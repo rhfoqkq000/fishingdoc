@@ -66,26 +66,26 @@ public class HourFragment extends Fragment {
         });
 
         //로딩
-        mHandler = new Handler();
-        getActivity().runOnUiThread(new Runnable(){
-
-            @Override
-            public void run() {
-                mProgressDialog = ProgressDialog.show(getActivity(),"","잠시만 기다려 주세요.", true);
-                mHandler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        try{
-                            if(mProgressDialog!=null&&mProgressDialog.isShowing()){
-                                mProgressDialog.dismiss();
-                            }
-                        }catch (Exception e){
-                            e.printStackTrace();
-                        }
-                    }
-                },2500);
-            }
-        });
+//        mHandler = new Handler();
+//        getActivity().runOnUiThread(new Runnable(){
+//
+//            @Override
+//            public void run() {
+//                mProgressDialog = ProgressDialog.show(getActivity(),"","잠시만 기다려 주세요.", true);
+//                mHandler.postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        try{
+//                            if(mProgressDialog!=null&&mProgressDialog.isShowing()){
+//                                mProgressDialog.dismiss();
+//                            }
+//                        }catch (Exception e){
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                },2500);
+//            }
+//        });
         return rootview;
     }
 }

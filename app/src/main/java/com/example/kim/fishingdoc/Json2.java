@@ -68,6 +68,7 @@ public class Json2 extends AsyncTask<String, String, HashMap<String, ArrayList<S
                         dhl.put("date", date);
                         dhl.put("height", height);
                         dhl.put("luna", luna);
+//                        Log.i("date",""+dhl.get("date"));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

@@ -1,7 +1,6 @@
 package com.example.kim.fishingdoc.weather;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -31,7 +30,7 @@ public class Weather_List extends Fragment {
 
     private Weather_ListView madapter;
     private ListView mlist;
-    final String url = "http://45.76.96.142:3000/crawler/";
+    final String url = "http://45.32.61.201:3000/crawler/";
     public Json json;
     public Json2 json2;
     public Json3 json3;
@@ -50,7 +49,7 @@ public class Weather_List extends Fragment {
     ArrayList<String> dataList = new ArrayList<String>();
     ArrayList<String> heightList = new ArrayList<String>();
     ArrayList<String> lunaList = new ArrayList<String>();
-    ArrayList<String> dateList = new ArrayList<String>();
+//    ArrayList<String> dateList = new ArrayList<String>();
     ArrayList<String> moonRiseList = new ArrayList<String>();
     ArrayList<String> moonIngList = new ArrayList<String>();
     ArrayList<String> moonSetList = new ArrayList<String>();
@@ -202,6 +201,8 @@ public class Weather_List extends Fragment {
                     json2 = new Json2();
                     hash2 = json2.execute(url + en + "/" + year + month).get();
                     dataList = hash2.get("date");
+                    Log.i("dataList뜬거맞냐",""+dataList);
+
                     heightList = hash2.get("height");
                     lunaList = hash2.get("luna");
                 }catch(Exception e){
@@ -211,17 +212,20 @@ public class Weather_List extends Fragment {
                 try{
                     json3 = new Json3();
                     hash3 = json3.execute(add).get();
-
+                    Log.i("json3끝^^","1");
+                    moonRiseList = hash3.get("moonRise");
+                    moonSetList = hash3.get("moonSet");
+                    moonIngList = hash3.get("moonIng");
                     String luna = getLuna(day).toString();
                     String height = getHeight(day).toString();
                     String moonRise = getRise(day).toString();
                     String moonIng = getIng(day).toString();
                     String moonSet = getSet(day).toString();
-//                    Log.e("오늘 음력 : ", luna);
-//                    Log.e("오늘 간만 : ", height);
-//                    Log.e("오늘 월출 : ", moonRise);
-//                    Log.e("오늘 남중 : ", moonIng);
-//                    Log.e("오늘 월몰 : ", moonSet);
+                    Log.e("오늘 음력 : ", luna);
+                    Log.e("오늘 간만 : ", height);
+                    Log.e("오늘 월출 : ", moonRise);
+                    Log.e("오늘 남중 : ", moonIng);
+                    Log.e("오늘 월몰 : ", moonSet);
                 }catch(Exception e){
                     e.printStackTrace();
                 }
@@ -229,35 +233,35 @@ public class Weather_List extends Fragment {
 
 
 
-
-//                Log.i("위도", "" + latitude.get(i));
-//                Log.i("경도", "" + longitude.get(i));
-//                Log.i("음력", "" + json2.luna.get(i));
-//                Log.i("월출", "" + json3.moonRise.get(i));
-
-                json2 = new Json2();
-                json2.execute(url + en + "/" + year + month);
-
-                json3 = new Json3();
-                json3.execute(add);
-
-                Handler handler = new Handler();
-                new Handler().postDelayed(new Runnable() {// 1 초 후에 실행
-
-                    @Override
-                    public void run() {
-                        String luna = getLuna(day).toString();
-                        String height = getHeight(day).toString();
-                        String moonRise = getRise(day).toString();
-                        String moonIng = getIng(day).toString();
-                        String moonSet = getSet(day).toString();
-//                        Log.e("오늘 음력 : ", luna);
-//                        Log.e("오늘 간만 : ", height);
-//                        Log.e("오늘 월출 : ", moonRise);
-//                        Log.e("오늘 남중 : ", moonIng);
-//                        Log.e("오늘 월몰 : ", moonSet);
-                    }
-                }, 2000);
+//
+////                Log.i("위도", "" + latitude.get(i));
+////                Log.i("경도", "" + longitude.get(i));
+////                Log.i("음력", "" + json2.luna.get(i));
+////                Log.i("월출", "" + json3.moonRise.get(i));
+//
+//                json2 = new Json2();
+//                json2.execute(url + en + "/" + year + month);
+//
+//                json3 = new Json3();
+//                json3.execute(add);
+//
+//                Handler handler = new Handler();
+//                new Handler().postDelayed(new Runnable() {// 1 초 후에 실행
+//
+//                    @Override
+//                    public void run() {
+//                        String luna = getLuna(day).toString();
+//                        String height = getHeight(day).toString();
+//                        String moonRise = getRise(day).toString();
+//                        String moonIng = getIng(day).toString();
+//                        String moonSet = getSet(day).toString();
+////                        Log.e("오늘 음력 : ", luna);
+////                        Log.e("오늘 간만 : ", height);
+////                        Log.e("오늘 월출 : ", moonRise);
+////                        Log.e("오늘 남중 : ", moonIng);
+////                        Log.e("오늘 월몰 : ", moonSet);
+//                    }
+//                }, 2000);
 
 
 //                Log.i("위도", "" + latitude.get(i));
@@ -320,18 +324,20 @@ public class Weather_List extends Fragment {
 
     public String getRise(String day) {
         int num = 0;
-        for (int i = 0; i < dateList.size(); i++) {
-            if (day.equals(dateList.get(i))) {
+        Log.i("허미쉽팔0",""+dataList);
+        for (int i = 0; i < dataList.size(); i++) {
+            if (day.equals(dataList.get(i))) {
                 num = i;
             }
         }
+        Log.i("허미쉽팔",""+moonRiseList.get(num));
         return moonRiseList.get(num);
     }
 
     public String getIng(String day) {
         int num = 0;
-        for (int i = 0; i < dateList.size(); i++) {
-            if (day.equals(dateList.get(i))) {
+        for (int i = 0; i < dataList.size(); i++) {
+            if (day.equals(dataList.get(i))) {
                 num = i;
             }
         }
@@ -340,8 +346,8 @@ public class Weather_List extends Fragment {
 
     public String getSet(String day) {
         int num = 0;
-        for (int i = 0; i < dateList.size(); i++) {
-            if (day.equals(dateList.get(i))) {
+        for (int i = 0; i < dataList.size(); i++) {
+            if (day.equals(dataList.get(i))) {
                 num = i;
             }
         }

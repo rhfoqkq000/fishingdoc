@@ -31,7 +31,7 @@ ArrayList<String> idList = new ArrayList<String>();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fish_content);
         ArrayList<String> distin = new ArrayList<String>();
-        int fish;
+        final int fish;
         HashMap<String, ArrayList<String>> hash = new HashMap<String, ArrayList<String>>();
 
         Intent intent = getIntent();
@@ -69,10 +69,15 @@ ArrayList<String> idList = new ArrayList<String>();
 //        edit_distin.setText(distin.get(id));
         try{
             getFishTask getFishTask = new getFishTask();
-            hash = getFishTask.execute("http://45.76.96.142:3000/fish").get();
+            hash = getFishTask.execute("http://45.32.61.201:3000/fish").get();
+
+//            Log.i("hash뜨긴떴냐",""+hash);
+
 //            Log.i("hash.get이다데스",""+hash.get("distin"));
             text_distin.setText(hash.get("distin").get(id));
             edit_distin.setText(hash.get("distin").get(id));
+//            text_habit.setText(hash.get("habit").get(id));
+//            edit_habit.setText(hash.get("habit").get(id));
 //            writeFishTask writeFishTask = new writeFishTask(idList.get(id), );
 
         }catch(Exception e){
@@ -111,7 +116,7 @@ ArrayList<String> idList = new ArrayList<String>();
 //                String temp = edit_distin.getText().toString();
 //                text_distin.setText(temp);
                 writeFishTask writeFishTask = new writeFishTask(idList.get(id), "distin", edit_distin.getText().toString(), text_distin, edit_distin);
-                writeFishTask.execute("http://45.76.96.142:3000/fish/");
+                writeFishTask.execute("http://45.32.61.201:3000/fish/");
                 text_distin.setText(edit_distin.getText().toString());
 //                Log.i("저장했따","1");
             }
@@ -133,8 +138,11 @@ ArrayList<String> idList = new ArrayList<String>();
                 button_add_habit.setVisibility(View.INVISIBLE);
                 button_save_habit.setVisibility(View.VISIBLE);
 
-                String temp = (String)text_habit.getText();
-                edit_habit.setText(temp);
+//                String temp = (String)text_habit.getText();
+//                edit_habit.setText(temp);
+                writeFishTask writeFishTask = new writeFishTask(idList.get(id), "habit", edit_habit.getText().toString(), text_distin, edit_distin);
+                writeFishTask.execute("http://45.32.61.201:3000/fish/");
+                text_habit.setText(edit_habit.getText().toString());
             }
         });
 
@@ -152,6 +160,11 @@ ArrayList<String> idList = new ArrayList<String>();
                 text_habit.setText(temp);
 //                writeFishTask writeFishTask = new writeFishTask(fish_id, "habit", edit_habit.getText().toString(), text_habit);
 //                writeFishTask.execute("http://45.76.96.142:3000/write/");
+                if(text_habit.getText().toString().equals("")){
+                    writeFishTask writeFishTask = new writeFishTask(idList.get(id), "habit", edit_habit.getText().toString(), text_habit, edit_habit);
+                    writeFishTask.execute("http://45.32.61.201:3000/fish");
+                    Log.i("execute떳냐..","1");
+                }
             }
         });
 

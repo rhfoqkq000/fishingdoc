@@ -46,26 +46,26 @@ public class MonthFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View rootview = inflater.inflate(R.layout.month_fragment, container, false);
 
-        mHandler = new Handler();
-        getActivity().runOnUiThread(new Runnable(){
-
-            @Override
-            public void run() {
-                mProgressDialog = ProgressDialog.show(getActivity(),"","잠시만 기다려 주세요.", true);
-                mHandler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        try{
-                            if(mProgressDialog!=null&&mProgressDialog.isShowing()){
-                                mProgressDialog.dismiss();
-                            }
-                        }catch (Exception e){
-                            e.printStackTrace();
-                        }
-                    }
-                },2500);
-            }
-        });
+//        mHandler = new Handler();
+//        getActivity().runOnUiThread(new Runnable(){
+//
+//            @Override
+//            public void run() {
+//                mProgressDialog = ProgressDialog.show(getActivity(),"","잠시만 기다려 주세요.", true);
+//                mHandler.postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        try{
+//                            if(mProgressDialog!=null&&mProgressDialog.isShowing()){
+//                                mProgressDialog.dismiss();
+//                            }
+//                        }catch (Exception e){
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                },2500);
+//            }
+//        });
 
         expandableListView = (ExpandableListView) rootview.findViewById(R.id.expandableListView);
         expandableListDetail = ExpandableListAdapter.getData();

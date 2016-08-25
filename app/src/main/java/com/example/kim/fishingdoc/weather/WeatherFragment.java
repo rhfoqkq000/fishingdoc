@@ -21,6 +21,7 @@ import com.example.kim.fishingdoc.weather.mFragment.NowFragment;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by kim on 2016-08-17.
@@ -78,7 +79,13 @@ public class WeatherFragment extends Fragment {
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position){
                 case 0:
-                    return NowFragment.newInstance(position + 1);
+                    try {
+                        return NowFragment.newInstance(position + 1);
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 case 1:
                     return HourFragment.newInstance(position + 2);
                 case 2:

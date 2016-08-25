@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +48,14 @@ public class FishFragment extends Fragment {
 
         try{
             getFishTask getFishTask = new getFishTask();
-            HashMap<String, ArrayList<String>> hash = getFishTask.execute("http://45.76.96.142:3000/fish").get();
+            HashMap<String, ArrayList<String>> hash = getFishTask.execute("http://45.32.61.201:3000/fish").get();
+
+            Log.i("hash가져왔당",""+hash.get("fishName"));
+            Log.i("hash가져왔당",""+hash.get("fishImg"));
+            Log.i("hash가져왔당",""+hash.get("id"));
+            Log.i("hash가져왔당",""+hash.get("fish_id"));
+            Log.i("hash가져왔당",""+hash.get("distin"));
+
             recyclerViewTitleText = hash.get("fishName");
             recyclerViewImages = hash.get("fishImg");
 //            Log.i("여기까진안전데스0","" + recyclerViewTitleText);

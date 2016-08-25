@@ -25,6 +25,7 @@ class getFishTask extends AsyncTask<String, String, HashMap<String, ArrayList<St
     ArrayList<String> id = new ArrayList<String>();
     ArrayList<String> fish_id = new ArrayList<String>();
     ArrayList<String> distin = new ArrayList<String>();
+    ArrayList<String> habit = new ArrayList<String>();
     static HashMap<String, ArrayList<String>> hash;
 
     @Override
@@ -45,22 +46,65 @@ class getFishTask extends AsyncTask<String, String, HashMap<String, ArrayList<St
             JSONArray jArray = new JSONArray(builder.toString());
 //            Log.i("jArray뭐야",""+jArray);
 
-            for (int i = 0; i < jArray.length(); i++) {
-                JSONObject topLevel = jArray.getJSONObject(i);
-                JSONObject topLevel2 = (JSONObject)topLevel.get("doc");
+            try {
+                for (int i = 0; i < jArray.length(); i++) {
+                    JSONObject topLevel = jArray.getJSONObject(i);
+//                Log.i("topLevel떴냐",""+topLevel);
+                    JSONObject topLevel2 = (JSONObject) topLevel.get("doc");
+//                Log.i("topLevel2떴냐",""+topLevel2);
+                    if (topLevel.get("name") != null) {
+                        fishName.add(i, ObjToString(topLevel.get("name")));
+                    } else {
+                        fishName.add(i, "NULL");
+                    }
+
+                    if (topLevel.get("img_path") != null) {
+                        fishImg.add(i, ObjToString(topLevel.get("img_path")));
+                    } else {
+                        fishImg.add(i, "NULL");
+                    }
+
+                    if (topLevel.get("id") != null) {
+                        id.add(i, ObjToString(topLevel.get("id")));
+                    } else {
+                        id.add(i, "NULL");
+                    }
+
+                    if (topLevel.get("fish_id") != null) {
+                        fish_id.add(i, ObjToString(topLevel.get("fish_id")));
+                    } else {
+                        fish_id.add(i, "NULL");
+                    }
+
+                    if (topLevel2.get("distin") != null) {
+                        distin.add(i, ObjToString(topLevel2.get("distin")));
+                    } else {
+                        distin.add(i, "NULL");
+
+                    }
+                }
 
 
-                fishName.add(i, ObjToString(topLevel.get("name")));
-                fishImg.add(i, ObjToString(topLevel.get("img_path")));
-                id.add(i, ObjToString(topLevel.get("id")));
-                fish_id.add(i, ObjToString(topLevel.get("fish_id")));
-                distin.add(i, ObjToString(topLevel2.get("distin")));
+
+//                habit.add(i, ObjToString(topLevel2.get("habit")));
+
+
+                }catch(Exception e){
+                e.printStackTrace();
             }
+
             hash.put("fishName", fishName);
             hash.put("fishImg", fishImg);
             hash.put("id", id);
             hash.put("fish_id", fish_id);
             hash.put("distin", distin);
+//            hash.put("habit", habit);
+
+//            Log.i("fishName떴냐",""+fishName);
+//            Log.i("fishImg떴냐",""+fishImg);
+//            Log.i("id떴냐",""+id);
+//            Log.i("fish_id떴냐",""+fish_id);
+//            Log.i("distin떴냐",""+distin);
 //            Log.i("getFishTask result떴냐",""+hash);
             urlConnection.disconnect();
         } catch (IOException | JSONException e) {
