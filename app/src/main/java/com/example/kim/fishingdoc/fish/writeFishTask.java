@@ -18,11 +18,12 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 class writeFishTask extends AsyncTask<String, String, String> {
-    String result, fish_id, param, content = "";
+    String result, param, content = "";
     TextView tv;
+    int id, fish_id;
     EditText ed;
 
-    public writeFishTask(String fish_id, String param, String content, TextView tv, EditText ed){
+    public writeFishTask(int fish_id, String param, String content, TextView tv, EditText ed){
         this.fish_id = fish_id;
         this.param = param;
         this.content = content;
@@ -41,7 +42,7 @@ class writeFishTask extends AsyncTask<String, String, String> {
             JSONObject obj2 = new JSONObject();
             obj.put(param, content);
             obj2.put("doc", obj);
-            obj2.put("fish_id", fish_id);
+            obj2.put("fish_id", fish_id+1);
             Log.i("obj2떴냐",""+obj2.toString());
             urlConnection.setRequestMethod("POST");
 //            Log.i("url뭐냐",""+url);

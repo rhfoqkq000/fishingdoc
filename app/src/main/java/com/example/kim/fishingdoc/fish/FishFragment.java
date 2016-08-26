@@ -38,6 +38,8 @@ public class FishFragment extends Fragment {
 
         final View rootView = inflater.inflate(R.layout.fish_fragment, container, false);
 
+
+
         recyclerViewTitleText = new ArrayList<String>();
         recyclerViewImages = new ArrayList<String>();
         idList = new ArrayList<String>();
@@ -62,6 +64,7 @@ public class FishFragment extends Fragment {
             idList = hash.get("id");
             fish_id = hash.get("fish_id");
             distin = hash.get("distin");
+
 //            Log.i("여기까진안전데스1","" + recyclerViewTitleText);
 //            Toast.makeText(getContext(), "여기까진안전데스1", Toast.LENGTH_SHORT).show();
 //            Log.i("id떴냐고요",""+id);
@@ -91,6 +94,8 @@ public class FishFragment extends Fragment {
                 android.R.layout.simple_dropdown_item_1line, titleTextArray);
         auto.setAdapter(adWord);
 //        Log.i("여기까진안전데스3",""+recyclerViewTitleText);
+
+
 
 
         auto.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -162,6 +167,7 @@ public class FishFragment extends Fragment {
         intent.putExtra("id", i);
         intent.putExtra("idList", idList);
         intent.putExtra("distin", distin);
+        intent.putExtra("fish_id", i);
         startActivity(intent);
     }
 }

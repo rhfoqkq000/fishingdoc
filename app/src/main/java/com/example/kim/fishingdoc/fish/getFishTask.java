@@ -26,6 +26,10 @@ class getFishTask extends AsyncTask<String, String, HashMap<String, ArrayList<St
     ArrayList<String> fish_id = new ArrayList<String>();
     ArrayList<String> distin = new ArrayList<String>();
     ArrayList<String> habit = new ArrayList<String>();
+    ArrayList<String> live = new ArrayList<String>();
+    ArrayList<String> bait = new ArrayList<String>();
+    ArrayList<String> catched = new ArrayList<String>();
+
     static HashMap<String, ArrayList<String>> hash;
 
     @Override
@@ -46,59 +50,40 @@ class getFishTask extends AsyncTask<String, String, HashMap<String, ArrayList<St
             JSONArray jArray = new JSONArray(builder.toString());
 //            Log.i("jArray뭐야",""+jArray);
 
-            try {
-                for (int i = 0; i < jArray.length(); i++) {
-                    JSONObject topLevel = jArray.getJSONObject(i);
+            for (int i = 0; i < jArray.length(); i++) {
+                JSONObject topLevel = jArray.getJSONObject(i);
 //                Log.i("topLevel떴냐",""+topLevel);
-                    JSONObject topLevel2 = (JSONObject) topLevel.get("doc");
+                JSONObject topLevel2 = (JSONObject)topLevel.get("doc");
+//                Log.e("eee",""+topLevel2.get("distin"));
 //                Log.i("topLevel2떴냐",""+topLevel2);
-                    if (topLevel.get("name") != null) {
-                        fishName.add(i, ObjToString(topLevel.get("name")));
-                    } else {
-                        fishName.add(i, "NULL");
-                    }
 
-                    if (topLevel.get("img_path") != null) {
-                        fishImg.add(i, ObjToString(topLevel.get("img_path")));
-                    } else {
-                        fishImg.add(i, "NULL");
-                    }
+                    fishName.add(i, topLevel.get("name").toString());
+                    fishImg.add(i, topLevel.get("img_path").toString());
+                    id.add(i, topLevel.get("id").toString());
+                    fish_id.add(i, topLevel.get("fish_id").toString());
+                    distin.add(i, topLevel2.get("distin").toString());
+                    habit.add(i, topLevel2.get("habit").toString());
+                    live.add(i, topLevel2.get("live").toString());
+                    bait.add(i, topLevel2.get("bait").toString());
+                    catched.add(i, topLevel2.get("catched").toString());
 
-                    if (topLevel.get("id") != null) {
-                        id.add(i, ObjToString(topLevel.get("id")));
-                    } else {
-                        id.add(i, "NULL");
-                    }
 
-                    if (topLevel.get("fish_id") != null) {
-                        fish_id.add(i, ObjToString(topLevel.get("fish_id")));
-                    } else {
-                        fish_id.add(i, "NULL");
-                    }
-
-                    if (topLevel2.get("distin") != null) {
-                        distin.add(i, ObjToString(topLevel2.get("distin")));
-                    } else {
-                        distin.add(i, "NULL");
-
-                    }
-                }
 
 
 
 //                habit.add(i, ObjToString(topLevel2.get("habit")));
 
 
-                }catch(Exception e){
-                e.printStackTrace();
             }
-
             hash.put("fishName", fishName);
             hash.put("fishImg", fishImg);
             hash.put("id", id);
             hash.put("fish_id", fish_id);
             hash.put("distin", distin);
-//            hash.put("habit", habit);
+            hash.put("habit", habit);
+            hash.put("live", live);
+            hash.put("bait", bait);
+            hash.put("catched", catched);
 
 //            Log.i("fishName떴냐",""+fishName);
 //            Log.i("fishImg떴냐",""+fishImg);

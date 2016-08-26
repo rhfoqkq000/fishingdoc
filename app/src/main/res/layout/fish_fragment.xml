@@ -38,6 +38,7 @@
                 android:src="@drawable/search"
                 android:layout_alignTop="@+id/auto"
                 android:layout_alignEnd="@+id/auto" />
+
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
