@@ -238,14 +238,16 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="150dp"
+                        android:layout_height="wrap_content"
+                        android:minHeight="100dp"
                         android:id="@+id/text_live"
                         android:visibility="visible"
                         android:layout_margin="6dp"
                         android:layout_below="@+id/view3" />
                     <EditText
                         android:layout_width="match_parent"
-                        android:layout_height="150dp"
+                        android:layout_height="wrap_content"
+                        android:minHeight="100dp"
                         android:id="@+id/edit_live"
                         android:layout_margin="6dp"
                         android:visibility="gone"
@@ -287,39 +289,41 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/re_bait">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="미끼"
-                    android:layout_margin="6dp"
-                    android:textSize="22dp"
-                    android:textStyle="bold"
-                    android:id="@+id/bait"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="미끼"
+                        android:layout_margin="6dp"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:id="@+id/bait"/>
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:id="@+id/view4"
-                    android:background="#ccc"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_below="@+id/bait" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:id="@+id/view4"
+                        android:background="#ccc"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_below="@+id/bait" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:id="@+id/text_bait"
-                    android:visibility="visible"
-                    android:layout_margin="6dp"
-                    android:layout_below="@+id/view4" />
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:id="@+id/edit_bait"
-                    android:layout_margin="6dp"
-                    android:visibility="gone"
-                    android:background="@null"
-                    android:layout_below="@+id/view4" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="100dp"
+                        android:id="@+id/text_bait"
+                        android:visibility="visible"
+                        android:layout_margin="6dp"
+                        android:layout_below="@+id/view4" />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="100dp"
+                        android:id="@+id/edit_bait"
+                        android:layout_margin="6dp"
+                        android:visibility="gone"
+                        android:background="@null"
+                        android:layout_below="@+id/view4" />
                 </RelativeLayout>
                 <Button
                     android:layout_width="wrap_content"
@@ -356,39 +360,41 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/re_catched">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="잡는 법"
-                        android:layout_margin="6dp"
-                        android:textSize="22dp"
-                        android:textStyle="bold"
-                        android:id="@+id/catched"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="잡는 법"
+                            android:layout_margin="6dp"
+                            android:textSize="22dp"
+                            android:textStyle="bold"
+                            android:id="@+id/catched"/>
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:id="@+id/view5"
-                        android:background="#ccc"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_below="@+id/catched" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:id="@+id/view5"
+                            android:background="#ccc"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_below="@+id/catched" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:id="@+id/text_catched"
-                        android:visibility="visible"
-                        android:layout_margin="6dp"
-                        android:layout_below="@+id/view5" />
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:id="@+id/edit_catched"
-                        android:layout_margin="6dp"
-                        android:visibility="gone"
-                        android:background="@null"
-                        android:layout_below="@+id/view5" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="100dp"
+                            android:id="@+id/text_catched"
+                            android:visibility="visible"
+                            android:layout_margin="6dp"
+                            android:layout_below="@+id/view5" />
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="100dp"
+                            android:id="@+id/edit_catched"
+                            android:layout_margin="6dp"
+                            android:visibility="gone"
+                            android:background="@null"
+                            android:layout_below="@+id/view5" />
                     </RelativeLayout>
                     <Button
                         android:layout_width="wrap_content"
