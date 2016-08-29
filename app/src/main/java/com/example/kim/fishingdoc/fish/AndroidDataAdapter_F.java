@@ -1,7 +1,10 @@
 package com.example.kim.fishingdoc.fish;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +21,7 @@ import java.util.ArrayList;
  */
 public class AndroidDataAdapter_F extends RecyclerView.Adapter<AndroidDataAdapter_F.ViewHolder> {
     private ArrayList<AndroidVersion> arrayList;
+    ArrayList<String> checkList;
     private Context mcontext;
     ArrayList<String> imgs, fish;
 
@@ -40,6 +44,15 @@ public class AndroidDataAdapter_F extends RecyclerView.Adapter<AndroidDataAdapte
         holder.textView.setText(fish.get(i).toString());
 //        holder.imageView.setImageResource(arrayList.get(i).getrecyclerViewImage());
         Picasso.with(mcontext).load(imgs.get(i)).resize(100, 100).into(holder.imageView);
+
+        holder.imageView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Log.i("onLongClick이당","1");
+                DialogSimple();
+                return false;
+            }
+        });
 
     }
 
@@ -67,5 +80,29 @@ public class AndroidDataAdapter_F extends RecyclerView.Adapter<AndroidDataAdapte
             imageView = (ImageView) v.findViewById(R.id.image);
 
         }
+    }
+
+    private void DialogSimple(){
+        checkList = new ArrayList<>();
+        AlertDialog.Builder alt_bld = new AlertDialog.Builder(mcontext);
+        alt_bld.setMessage("등록?^0^").setCancelable(
+                false).setPositiveButton("Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                }).setNegativeButton("No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = alt_bld.create();
+        // Title for AlertDialog
+        alert.setTitle("등☆록하기");
+        // Icon for AlertDialog
+        alert.setIcon(R.drawable.icon);
+        alert.show();
     }
 }

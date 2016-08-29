@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,16 +31,20 @@ public class MonthFragment extends Fragment {
     HashMap<String, List<Integer>> expandableListDetail;
 
     private Handler mHandler;
-    private ProgressDialog mProgressDialog;
+    private static ProgressDialog mProgressDialog;
 
     public MonthFragment(){
 
     }
-    public static MonthFragment newInstance(int SectionNumber) {
+    public static MonthFragment newInstance(int SectionNumber, ProgressDialog mProgressDialog2) {
+        mProgressDialog = mProgressDialog2;
+
         MonthFragment fragment = new MonthFragment();
         Bundle args = new Bundle();
         args.putInt("section_number", SectionNumber);
         fragment.setArguments(args);
+
+
         return fragment;
     }
 
@@ -92,7 +97,12 @@ public class MonthFragment extends Fragment {
 
             }
         });
-
+        if (mProgressDialog != null && mProgressDialog.isShowing()) {
+            mProgressDialog.hide();
+            Log.i("없어졌냐?","1");
+        }
         return rootview;
     }
+
+
 }

@@ -52,7 +52,15 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="8dp"/>
 
-        <android.support.v7.widget.CardView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="유정아"
+                android:id="@+id/tvHistory"
+                android:layout_gravity="center_horizontal" />
+
+            <android.support.v7.widget.CardView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"

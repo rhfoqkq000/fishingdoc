@@ -1,5 +1,6 @@
 package com.example.kim.fishingdoc.weather;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -8,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +29,7 @@ import java.util.concurrent.ExecutionException;
  * Created by kim on 2016-08-17.
  */
 public class WeatherFragment extends Fragment {
+    private static ProgressDialog mProgressDialog;
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
@@ -67,7 +70,7 @@ public class WeatherFragment extends Fragment {
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+    public class SectionsPagerAdapter extends android.support.v4.app.FragmentStatePagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -80,16 +83,25 @@ public class WeatherFragment extends Fragment {
             switch (position){
                 case 0:
                     try {
-                        return NowFragment.newInstance(position + 1);
+                        showProgressDialog();
+                        Log.i("NowFragment떴땅","1");
+
+                        return NowFragment.newInstance(position + 1, mProgressDialog);
                     } catch (ExecutionException e) {
                         e.printStackTrace();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 case 1:
-                    return HourFragment.newInstance(position + 2);
+                    showProgressDialog();
+                    Log.i("NowFragment떴땅","1");
+
+                    return HourFragment.newInstance(position + 2, mProgressDialog);
                 case 2:
-                    return MonthFragment.newInstance(position + 3);
+                    showProgressDialog();
+                    Log.i("NowFragment떴땅","1");
+
+                    return MonthFragment.newInstance(position + 3, mProgressDialog);
             }
             return null;
         }
@@ -113,4 +125,23 @@ public class WeatherFragment extends Fragment {
             return null;
         }
     }
+
+
+    private void showProgressDialog() {
+        if (mProgressDialog == null) {
+//            mProgressDialog = new ProgressDialog(getContext());
+//            mProgressDialog.setMessage("loading...");
+//            mProgressDialog.setIndeterminate(true);
+            mProgressDialog = ProgressDialog.show(getContext(), "Waiting...", "Please wait five seconds...");
+        }
+
+
+//        mProgressDialog.show();
+    }
+    private void hideProgressDialog() {
+        if (mProgressDialog != null && mProgressDialog.isShowing()) {
+            mProgressDialog.hide();
+        }
+    }
+
 }

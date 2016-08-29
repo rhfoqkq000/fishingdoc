@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +16,7 @@ import com.example.kim.fishingdoc.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 
 /**
@@ -39,6 +41,8 @@ ArrayList<String> idList = new ArrayList<String>();
         id = intent.getExtras().getInt("id");
         fish_id = intent.getExtras().getInt("fish_id");
         idList = intent.getExtras().getStringArrayList("idList");
+        String email = intent.getExtras().getString("email");
+        Log.e("email떴냥",""+email);
 //        Log.i("idList뭐잇냥",""+idList.get(id));
         distin = intent.getExtras().getStringArrayList("distin");
         TextView content_text = (TextView)findViewById(R.id.content_text);
@@ -46,6 +50,14 @@ ArrayList<String> idList = new ArrayList<String>();
 
         ImageView imv = (ImageView)findViewById(R.id.content_image);
         Picasso.with(getApplicationContext()).load(imgUrl.get(id)).into(imv);
+
+
+
+
+
+        TextView tvHistory = (TextView)findViewById(R.id.tvHistory);
+        Calendar calendar = Calendar.getInstance();
+        tvHistory.setText(email.substring(0, 3)+"*** "+calendar.getTime().toString().substring(0, 19));
 
         Toolbar toolbar1 = (Toolbar) findViewById(R.id.fish_toolbar);
         setSupportActionBar(toolbar1);

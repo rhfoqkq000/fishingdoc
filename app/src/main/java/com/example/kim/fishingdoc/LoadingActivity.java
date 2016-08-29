@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.kim.fishingdoc.login.SignInActivity;
+
 /**
  * Created by kim on 2016-08-21.
  */
@@ -14,11 +16,12 @@ public class LoadingActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loading);
         Handler hd = new Handler();
-        hd.postDelayed(new splashhandler(), 1800);
+        hd.postDelayed(new splashhandler(), 1000);
     }
+
     private class splashhandler implements Runnable{
         public void run() {
-            startActivity(new Intent(getApplication(), MainActivity.class));
+            startActivity(new Intent(getApplication(), SignInActivity.class));
             LoadingActivity.this.finish();
         }
     }

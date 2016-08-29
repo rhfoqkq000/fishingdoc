@@ -1,5 +1,6 @@
 package com.example.kim.fishingdoc.weather.mFragment;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,31 +18,32 @@ import java.util.concurrent.ExecutionException;
  * Created by kim on 2016-08-18.
  */
 public class NowFragment extends Fragment {
+    private static ProgressDialog mProgressDialog;
+    static Context mContext;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
     }
 
     public NowFragment(){
 
     }
-    static Context context;
-//    context = this.getContext();
 
-    public Context getContxt(){
-//        Log.i("Context모냥모냥",""+this.getContxt());
-        return this.getContext();
-    }
-    public static NowFragment newInstance(int SectionNumber) throws ExecutionException, InterruptedException {
+    public static NowFragment newInstance(int SectionNumber, ProgressDialog mProgressDialog2) throws ExecutionException, InterruptedException {
+        mProgressDialog = mProgressDialog2;
         NowFragment now = new NowFragment();
         Bundle args = new Bundle();
         args.putInt("section_number", SectionNumber);
         now.setArguments(args);
+
+
+
         return now;
     }
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View rootview = inflater.inflate(R.layout.now_fragment, container, false);
+
 //        NowFragment.context = context.getApplicationContext();
         Log.i("rootview.getContext()떴냐",""+rootview.getContext());
 
@@ -65,12 +67,12 @@ public class NowFragment extends Fragment {
 //                },2000);
 //            }
 //        });
+        if (mProgressDialog != null && mProgressDialog.isShowing()) {
+            mProgressDialog.dismiss();
+            Log.i("숨겼당","1");
+        }
         return rootview;
     }
 
-    public Context getContxxt(){
-        Log.i("getContxxt떴냐제발좀",""+NowFragment.context);
-        return NowFragment.context;
-    }
 
 }

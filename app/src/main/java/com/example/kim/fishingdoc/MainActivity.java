@@ -1,9 +1,12 @@
 package com.example.kim.fishingdoc;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
@@ -17,11 +20,20 @@ public class  MainActivity extends AppCompatActivity implements AHBottomNavigati
     private final long FINISH_INTERVAL_TIME = 2000;
     private long backPressedTime = 0;
     AHBottomNavigation bottomNavigation;
+    String email = "";
+    Context mContext;
+    public Context getmContext(){
+        mContext = this;
+        return mContext;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent i = getIntent();
+        email = i.getExtras().getString("email");
+        Log.i("email떴냐",""+email);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -67,7 +79,9 @@ public class  MainActivity extends AppCompatActivity implements AHBottomNavigati
 //            getSupportFragmentManager().beginTransaction().replace(R.id.content_id, weatherFragment).commit();
         } else if (position == 1) {
             FishFragment fishFragment = new FishFragment();
-
+            Bundle bundle = new Bundle();
+            bundle.putString("email", email);
+            fishFragment.setArguments(bundle);
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id, fishFragment).commit();
 
         } else if (position == 2) {

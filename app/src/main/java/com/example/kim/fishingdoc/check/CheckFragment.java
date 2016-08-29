@@ -1,5 +1,6 @@
 package com.example.kim.fishingdoc.check;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.kim.fishingdoc.R;
 import com.example.kim.fishingdoc.fish.AndroidVersion;
+import com.example.kim.fishingdoc.fish.Fish_Content;
 import com.example.kim.fishingdoc.fish.RecyclerItemClickListener;
 
 import java.util.ArrayList;
@@ -91,7 +93,6 @@ public class CheckFragment extends Fragment {
         );
         return rootView;
     }
-
     private ArrayList<AndroidVersion> prepareData() {
 
         ArrayList<AndroidVersion> av = new ArrayList<>();
@@ -102,5 +103,14 @@ public class CheckFragment extends Fragment {
             av.add(mAndroidVersion);
         }
         return av;
+    }
+
+    public void Intent(int i){
+        Intent intent = new Intent(getActivity().getApplicationContext(),Fish_Content.class);
+        intent.putExtra("titleText", recyclerViewTitleText);
+        intent.putExtra("imgUrl", recyclerViewImages);
+        intent.putExtra("id", i);
+        intent.putExtra("fish_id", i);
+        startActivity(intent);
     }
 }

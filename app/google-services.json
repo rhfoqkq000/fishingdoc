@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "396406393075",
+    "project_id": "fishingdoc-141511"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:396406393075:android:217edc7f517af429",
+        "android_client_info": {
+          "package_name": "com.example.kim.fishingdoc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "396406393075-gqclua04fbnk108inaeiaarcqqd9ui7u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kim.fishingdoc",
+            "certificate_hash": "BFDA193182AF80D2EAC3DBA4BC8F3D6E0E53B189"
+          }
+        },
+        {
+          "client_id": "396406393075-ufb35tugkc3k5pubgrgtfk2rhqbn51dv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

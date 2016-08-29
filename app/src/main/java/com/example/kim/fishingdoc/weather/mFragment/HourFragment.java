@@ -27,16 +27,20 @@ public class HourFragment extends Fragment {
     private Hour_ListView mlistview;
 
     private Handler mHandler;
-    private ProgressDialog mProgressDialog;
+    private static ProgressDialog mProgressDialog;
 
     public HourFragment(){
 
     }
-    public static HourFragment newInstance(int SectionNumber) {
+    public static HourFragment newInstance(int SectionNumber, ProgressDialog mProgressDialog2) {
+        mProgressDialog = mProgressDialog2;
+
         HourFragment fragment = new HourFragment();
         Bundle args = new Bundle();
         args.putInt("section_number", SectionNumber);
         fragment.setArguments(args);
+
+
         return fragment;
     }
 
@@ -86,6 +90,10 @@ public class HourFragment extends Fragment {
 //                },2500);
 //            }
 //        });
+        if (mProgressDialog != null && mProgressDialog.isShowing()) {
+            mProgressDialog.hide();
+        }
         return rootview;
     }
+
 }
