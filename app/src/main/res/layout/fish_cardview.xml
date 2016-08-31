@@ -24,7 +24,6 @@
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 android:src="@drawable/image4" />
-
             <TextView
                 android:id="@+id/text"
                 android:layout_width="105dp"

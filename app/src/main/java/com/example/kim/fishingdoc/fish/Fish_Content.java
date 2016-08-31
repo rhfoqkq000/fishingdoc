@@ -3,9 +3,9 @@ package com.example.kim.fishingdoc.fish;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +16,6 @@ import com.example.kim.fishingdoc.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.HashMap;
 
 /**
@@ -24,6 +23,8 @@ import java.util.HashMap;
  */
 public class Fish_Content extends AppCompatActivity {
     int id;
+    private FloatingActionButton fab_add;
+    private FloatingActionButton fab_minus;
 //    String fish_id2 = String.valueOf(fish);
 ArrayList<String> idList = new ArrayList<String>();
 
@@ -41,8 +42,6 @@ ArrayList<String> idList = new ArrayList<String>();
         id = intent.getExtras().getInt("id");
         fish_id = intent.getExtras().getInt("fish_id");
         idList = intent.getExtras().getStringArrayList("idList");
-        String email = intent.getExtras().getString("email");
-        Log.e("email떴냥",""+email);
 //        Log.i("idList뭐잇냥",""+idList.get(id));
         distin = intent.getExtras().getStringArrayList("distin");
         TextView content_text = (TextView)findViewById(R.id.content_text);
@@ -50,14 +49,6 @@ ArrayList<String> idList = new ArrayList<String>();
 
         ImageView imv = (ImageView)findViewById(R.id.content_image);
         Picasso.with(getApplicationContext()).load(imgUrl.get(id)).into(imv);
-
-
-
-
-
-        TextView tvHistory = (TextView)findViewById(R.id.tvHistory);
-        Calendar calendar = Calendar.getInstance();
-        tvHistory.setText(email.substring(0, 3)+"*** "+calendar.getTime().toString().substring(0, 19));
 
         Toolbar toolbar1 = (Toolbar) findViewById(R.id.fish_toolbar);
         setSupportActionBar(toolbar1);
@@ -107,7 +98,24 @@ ArrayList<String> idList = new ArrayList<String>();
             e.printStackTrace();
         }
 
+        //floating icon
+        fab_add = (FloatingActionButton) findViewById(R.id.fab_add);
+        fab_minus = (FloatingActionButton) findViewById(R.id.fab_minus);
 
+        fab_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fab_add.setVisibility(View.INVISIBLE);
+                fab_minus.setVisibility(View.VISIBLE);
+            }
+        });
+        fab_minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fab_add.setVisibility(View.VISIBLE);
+                fab_minus.setVisibility(View.INVISIBLE);
+            }
+        });
 
         final Button button_add_distin = (Button)findViewById(R.id.button_add_distin);
         final Button button_save_distin = (Button)findViewById(R.id.button_save_distin);

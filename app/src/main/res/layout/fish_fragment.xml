@@ -1,47 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF">
-    <android.support.v7.widget.CardView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/fish_card"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        card_view:cardElevation="2dp"
-        card_view:cardCornerRadius="5dp"
-        android:background="#FFFFFF">
+        android:orientation="horizontal">
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <AutoCompleteTextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="0.6"
+            android:layout_marginLeft="8dp">
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/auto"
-                android:background="@null"
-                android:completionThreshold="1" />
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/searchbt"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
-                android:paddingTop="3dp"
-                android:paddingRight="8dp"
-                android:layout_gravity="right"
-                android:background="#00FF0000"
-                android:src="@drawable/search"
-                android:layout_alignTop="@+id/auto"
-                android:layout_alignEnd="@+id/auto" />
-
+                android:id="@+id/fish_card"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="2dp"
+                card_view:cardElevation="2dp"
+                card_view:cardCornerRadius="5dp"
+                android:background="#FFFFFF">
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/auto"
+                    android:background="@null"
+                    android:completionThreshold="1" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/searchbt"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="8dp"
+                    android:layout_gravity="right"
+                    android:background="#00FF0000"
+                    android:src="@drawable/search"
+                    android:layout_alignTop="@+id/auto"
+                    android:layout_alignEnd="@+id/auto" />
+            </android.support.v7.widget.CardView>
         </RelativeLayout>
-    </android.support.v7.widget.CardView>
-
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_weight="0.2"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="12dp"
+            card_view:cardElevation="2dp"
+            card_view:cardCornerRadius="5dp">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/file_add"
+                android:text="추가"
+                android:textColor="#FFFFFF"
+                android:layout_gravity="center_horizontal"
+                android:background="#0084ff"/>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
     <android.support.design.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/coordinatorLayout"
@@ -57,5 +81,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/recycler_view"
             android:scrollbars="vertical"/>
+
     </android.support.design.widget.CoordinatorLayout>
 </LinearLayout>
