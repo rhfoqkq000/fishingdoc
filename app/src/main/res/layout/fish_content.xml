@@ -43,7 +43,11 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
+<<<<<<< HEAD
                     android:id="@+id/insert_image"
+=======
+                    android:id="@+id/content_image"
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
                     android:adjustViewBounds="true"
                     android:scaleType="fitXY"
                     android:src="@drawable/fish3" />
@@ -51,16 +55,27 @@
                     android:layout_width="60dp"
                     android:layout_height="30dp"
                     android:layout_margin="8dp"
+<<<<<<< HEAD
                     android:layout_below="@+id/insert_image"
                     card_view:cardElevation="2dp"
                     card_view:cardCornerRadius="5dp"
                     card_view:cardBackgroundColor="#0084ff">
+=======
+                    android:layout_below="@+id/content_image"
+                    card_view:cardElevation="2dp"
+                    card_view:cardCornerRadius="5dp"
+                    android:background="#0084ff">
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/image_add"
                         android:background="#0084ff"
+<<<<<<< HEAD
                         android:text="사진변경"
+=======
+                        android:text="사진추가"
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
                         android:textColor="#FFFFFF"
                         android:textSize="12dp"/>
                 </android.support.v7.widget.CardView>
@@ -72,6 +87,7 @@
                     android:textSize="20dp"
                     android:textStyle="bold"
                     android:textColor="#000000"
+<<<<<<< HEAD
                     android:layout_below="@+id/insert_image"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="8dp"/>
@@ -117,7 +133,42 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true" />
+=======
+                    android:layout_below="@+id/content_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"/>
 
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:clickable="true"
+                    android:src="@drawable/add"
+                    android:visibility="visible"
+                    app:layout_anchorGravity="bottom|right|end"
+                    app:layout_anchor="@+id/viewOne"
+                    app:backgroundTint="#0084ff"
+                    app:rippleColor="#FFF"
+                    android:layout_alignBottom="@+id/content_text"
+                    android:layout_alignParentEnd="true" />
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:clickable="true"
+                    android:src="@drawable/minus"
+                    android:visibility="visible"
+                    app:layout_anchorGravity="bottom|right|end"
+                    app:layout_anchor="@+id/viewOne"
+                    app:backgroundTint="#0084ff"
+                    app:rippleColor="#FFF"
+                    android:layout_alignBottom="@+id/content_text"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
             <android.support.v7.widget.CardView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -193,6 +244,7 @@
                             android:visibility="gone" />
                     </android.support.v7.widget.CardView>
                 </RelativeLayout>
+<<<<<<< HEAD
             </android.support.v7.widget.CardView>
             <android.support.v7.widget.CardView
                 android:layout_width="fill_parent"
@@ -202,6 +254,46 @@
                 card_view:cardElevation="2dp"
                 card_view:cardCornerRadius="5dp"
                 android:background="#FFFFFF">
+=======
+                <android.support.v7.widget.CardView
+                    android:layout_width="70dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/re_distin"
+                    android:layout_alignParentEnd="true"
+                    card_view:cardElevation="2dp"
+                    card_view:cardCornerRadius="5dp"
+                    card_view:cardBackgroundColor="#0084ff">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_add_distin"
+                        android:background="#00FF0000"
+                        android:text="추가"
+                        android:textColor="#FFFFFF"
+                        android:visibility="visible" />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_save_distin"
+                        android:background="#00FF0000"
+                        android:text="확인"
+                        android:textColor="#FFFFFF"
+                        android:visibility="gone" />
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            card_view:contentPadding="10dp"
+            card_view:cardElevation="2dp"
+            card_view:cardCornerRadius="5dp"
+            android:background="#FFFFFF">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -269,6 +361,7 @@
                             android:visibility="gone" />
                     </android.support.v7.widget.CardView>
                 </RelativeLayout>
+<<<<<<< HEAD
             </android.support.v7.widget.CardView>
             <android.support.v7.widget.CardView
                 android:layout_width="fill_parent"
@@ -278,6 +371,46 @@
                 card_view:cardElevation="2dp"
                 card_view:cardCornerRadius="5dp"
                 android:background="#FFFFFF">
+=======
+                <android.support.v7.widget.CardView
+                    android:layout_width="70dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/re_habit"
+                    android:layout_alignParentEnd="true"
+                    card_view:cardElevation="2dp"
+                    card_view:cardCornerRadius="5dp"
+                    card_view:cardBackgroundColor="#0084ff">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_add_habit"
+                        android:background="#00FF0000"
+                        android:text="추가"
+                        android:textColor="#FFFFFF"
+                        android:visibility="visible" />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_save_habit"
+                        android:background="#00FF0000"
+                        android:text="확인"
+                        android:textColor="#FFFFFF"
+                        android:visibility="gone" />
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            card_view:contentPadding="10dp"
+            card_view:cardElevation="2dp"
+            card_view:cardCornerRadius="5dp"
+            android:background="#FFFFFF">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -345,6 +478,7 @@
                             android:visibility="gone" />
                     </android.support.v7.widget.CardView>
                 </RelativeLayout>
+<<<<<<< HEAD
             </android.support.v7.widget.CardView>
             <android.support.v7.widget.CardView
                 android:layout_width="fill_parent"
@@ -354,6 +488,46 @@
                 card_view:cardElevation="2dp"
                 card_view:cardCornerRadius="5dp"
                 android:background="#FFFFFF">
+=======
+                <android.support.v7.widget.CardView
+                    android:layout_width="70dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/re_live"
+                    android:layout_alignParentEnd="true"
+                    card_view:cardElevation="2dp"
+                    card_view:cardCornerRadius="5dp"
+                    card_view:cardBackgroundColor="#0084ff">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_add_live"
+                        android:background="#00FF0000"
+                        android:text="추가"
+                        android:textColor="#FFFFFF"
+                        android:visibility="visible" />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_save_live"
+                        android:background="#00FF0000"
+                        android:text="확인"
+                        android:textColor="#FFFFFF"
+                        android:visibility="gone" />
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            card_view:contentPadding="10dp"
+            card_view:cardElevation="2dp"
+            card_view:cardCornerRadius="5dp"
+            android:background="#FFFFFF">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -424,7 +598,37 @@
                             android:visibility="gone" />
                     </android.support.v7.widget.CardView>
                 </RelativeLayout>
+<<<<<<< HEAD
             </android.support.v7.widget.CardView>
+=======
+                <android.support.v7.widget.CardView
+                    android:layout_width="70dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/re_bait"
+                    android:layout_alignParentEnd="true"
+                    card_view:cardElevation="2dp"
+                    card_view:cardCornerRadius="5dp"
+                    card_view:cardBackgroundColor="#0084ff">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_add_bait"
+                        android:background="#00FF0000"
+                        android:text="추가"
+                        android:textColor="#FFFFFF"
+                        android:visibility="visible" />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_save_bait"
+                        android:background="#00FF0000"
+                        android:text="확인"
+                        android:textColor="#FFFFFF"
+                        android:visibility="gone" />
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
             <android.support.v7.widget.CardView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -479,7 +683,11 @@
                     <android.support.v7.widget.CardView
                         android:layout_width="70dp"
                         android:layout_height="35dp"
+<<<<<<< HEAD
                         android:layout_below="@+id/re_habit"
+=======
+                        android:layout_below="@+id/re_catched"
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
                         android:layout_alignParentEnd="true"
                         card_view:cardElevation="2dp"
                         card_view:cardCornerRadius="5dp"
@@ -487,7 +695,11 @@
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+<<<<<<< HEAD
                             android:id="@+id/button_add_habit"
+=======
+                            android:id="@+id/button_add_catched"
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
                             android:background="#00FF0000"
                             android:text="추가"
                             android:textColor="#FFFFFF"
@@ -495,7 +707,11 @@
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+<<<<<<< HEAD
                             android:id="@+id/button_save_habit"
+=======
+                            android:id="@+id/button_save_catched"
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
                             android:background="#00FF0000"
                             android:text="확인"
                             android:textColor="#FFFFFF"

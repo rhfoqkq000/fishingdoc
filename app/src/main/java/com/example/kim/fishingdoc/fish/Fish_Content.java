@@ -6,9 +6,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,6 +40,7 @@ import retrofit2.Response;
  */
 public class Fish_Content extends AppCompatActivity {
     int id;
+<<<<<<< HEAD
     private static final int SELECT_PHOTO = 100;
     ImageView imv;
     int chkImg = 0;
@@ -47,6 +48,11 @@ public class Fish_Content extends AppCompatActivity {
     File imgFile;
     String email;
     //    String fish_id2 = String.valueOf(fish);
+=======
+    private FloatingActionButton fab_add;
+    private FloatingActionButton fab_minus;
+//    String fish_id2 = String.valueOf(fish);
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
 ArrayList<String> idList = new ArrayList<String>();
 
     @Override
@@ -90,8 +96,11 @@ ArrayList<String> idList = new ArrayList<String>();
         id = intent.getExtras().getInt("id");
         fish_id = intent.getExtras().getInt("fish_id");
         idList = intent.getExtras().getStringArrayList("idList");
+<<<<<<< HEAD
         email = intent.getExtras().getString("email").substring(0, 3)+"***";
         Log.e("email떴냥",""+email);
+=======
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
 //        Log.i("idList뭐잇냥",""+idList.get(id));
         distin = intent.getExtras().getStringArrayList("distin");
         final TextView content_text = (TextView)findViewById(R.id.content_text);
@@ -183,6 +192,7 @@ ArrayList<String> idList = new ArrayList<String>();
             }
         });
 
+<<<<<<< HEAD
 
 
         final TextView tvHistory = (TextView)findViewById(R.id.tvHistory);
@@ -200,6 +210,8 @@ ArrayList<String> idList = new ArrayList<String>();
 //
 //        }
 
+=======
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
         Toolbar toolbar1 = (Toolbar) findViewById(R.id.fish_toolbar);
         setSupportActionBar(toolbar1);
 
@@ -275,7 +287,24 @@ ArrayList<String> idList = new ArrayList<String>();
             e.printStackTrace();
         }
 
+        //floating icon
+        fab_add = (FloatingActionButton) findViewById(R.id.fab_add);
+        fab_minus = (FloatingActionButton) findViewById(R.id.fab_minus);
 
+        fab_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fab_add.setVisibility(View.INVISIBLE);
+                fab_minus.setVisibility(View.VISIBLE);
+            }
+        });
+        fab_minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fab_add.setVisibility(View.VISIBLE);
+                fab_minus.setVisibility(View.INVISIBLE);
+            }
+        });
 
         final Button button_add_distin = (Button)findViewById(R.id.button_add_distin);
         final Button button_save_distin = (Button)findViewById(R.id.button_save_distin);

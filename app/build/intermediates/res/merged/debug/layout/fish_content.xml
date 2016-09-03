@@ -132,6 +132,7 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+<<<<<<< HEAD
                         android:id="@+id/re_live">
                         <TextView
                             android:layout_width="match_parent"
@@ -141,10 +142,22 @@
                             android:textSize="22dp"
                             android:textStyle="bold"
                             android:id="@+id/live"/>
+=======
+                        android:id="@+id/re_distin">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="특징"
+                            android:layout_margin="6dp"
+                            android:textSize="22dp"
+                            android:textStyle="bold"
+                            android:id="@+id/distin"/>
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="2dp"
+<<<<<<< HEAD
                             android:id="@+id/view3"
                             android:background="#ccc"
                             android:layout_marginTop="8dp"
@@ -202,6 +215,64 @@
                 card_view:cardElevation="2dp"
                 card_view:cardCornerRadius="5dp"
                 android:background="#FFFFFF">
+=======
+                            android:id="@+id/view1"
+                            android:background="#ccc"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_below="@+id/distin" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="100dp"
+                            android:id="@+id/text_distin"
+                            android:visibility="visible"
+                            android:layout_margin="6dp"
+                            android:layout_below="@+id/view1" />
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="100dp"
+                            android:id="@+id/edit_distin"
+                            android:layout_margin="6dp"
+                            android:visibility="gone"
+                            android:background="@null"
+                            android:textSize="15dp"
+                            android:layout_below="@+id/view1" />
+                    </RelativeLayout>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_add_distin"
+                        android:background="#00FF0000"
+                        android:text="추가"
+                        android:visibility="visible"
+                        android:layout_below="@+id/re_distin"
+                        android:layout_alignParentEnd="true"/>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button_save_distin"
+                        android:background="#00FF0000"
+                        android:text="확인"
+                        android:visibility="gone"
+                        android:layout_below="@+id/re_distin"
+                        android:layout_alignParentEnd="true"/>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            card_view:contentPadding="10dp"
+            card_view:cardElevation="2dp"
+            card_view:cardCornerRadius="5dp"
+            android:background="#FFFFFF">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -303,6 +374,7 @@
                             android:layout_marginBottom="10dp"
                             android:layout_below="@+id/catched" />
 
+<<<<<<< HEAD
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
@@ -344,6 +416,25 @@
                             android:textColor="#FFFFFF"
                             android:visibility="gone" />
                     </android.support.v7.widget.CardView>
+=======
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="100dp"
+                        android:id="@+id/text_live"
+                        android:visibility="visible"
+                        android:layout_margin="6dp"
+                        android:layout_below="@+id/view3" />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="100dp"
+                        android:id="@+id/edit_live"
+                        android:layout_margin="6dp"
+                        android:visibility="gone"
+                        android:background="@null"
+                        android:layout_below="@+id/view3" />
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
             <android.support.v7.widget.CardView
@@ -356,6 +447,7 @@
                 android:background="#FFFFFF">
                 <RelativeLayout
                     android:layout_width="match_parent"
+<<<<<<< HEAD
                     android:layout_height="wrap_content">
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -424,6 +516,65 @@
                             android:visibility="gone" />
                     </android.support.v7.widget.CardView>
                 </RelativeLayout>
+=======
+                    android:layout_height="wrap_content"
+                    android:id="@+id/re_bait">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="미끼"
+                        android:layout_margin="6dp"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:id="@+id/bait"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:id="@+id/view4"
+                        android:background="#ccc"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_below="@+id/bait" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="100dp"
+                        android:id="@+id/text_bait"
+                        android:visibility="visible"
+                        android:layout_margin="6dp"
+                        android:layout_below="@+id/view4" />
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="100dp"
+                        android:id="@+id/edit_bait"
+                        android:layout_margin="6dp"
+                        android:visibility="gone"
+                        android:background="@null"
+                        android:layout_below="@+id/view4" />
+                </RelativeLayout>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_add_bait"
+                    android:background="#00FF0000"
+                    android:text="추가"
+                    android:visibility="visible"
+                    android:layout_below="@+id/re_bait"
+                    android:layout_alignParentEnd="true"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_save_bait"
+                    android:background="#00FF0000"
+                    android:text="확인"
+                    android:visibility="gone"
+                    android:layout_below="@+id/re_bait"
+                    android:layout_alignParentEnd="true"/>
+                </RelativeLayout>
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
             </android.support.v7.widget.CardView>
             <android.support.v7.widget.CardView
                 android:layout_width="fill_parent"
@@ -439,6 +590,7 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+<<<<<<< HEAD
                         android:id="@+id/re_habit">
                         <TextView
                             android:layout_width="match_parent"
@@ -448,33 +600,67 @@
                             android:textSize="22dp"
                             android:textStyle="bold"
                             android:id="@+id/habit"/>
+=======
+                        android:id="@+id/re_catched">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="잡는 법"
+                            android:layout_margin="6dp"
+                            android:textSize="22dp"
+                            android:textStyle="bold"
+                            android:id="@+id/catched"/>
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
 
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="2dp"
+<<<<<<< HEAD
                             android:id="@+id/view2"
                             android:background="#ccc"
                             android:layout_marginTop="8dp"
                             android:layout_marginBottom="10dp"
                             android:layout_below="@+id/habit" />
+=======
+                            android:id="@+id/view5"
+                            android:background="#ccc"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_below="@+id/catched" />
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:minHeight="100dp"
+<<<<<<< HEAD
                             android:id="@+id/text_habit"
                             android:visibility="visible"
                             android:layout_margin="6dp"
                             android:layout_below="@+id/view2" />
+=======
+                            android:id="@+id/text_catched"
+                            android:visibility="visible"
+                            android:layout_margin="6dp"
+                            android:layout_below="@+id/view5" />
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:minHeight="100dp"
+<<<<<<< HEAD
                             android:id="@+id/edit_habit"
                             android:layout_margin="6dp"
                             android:visibility="gone"
                             android:background="@null"
                             android:layout_below="@+id/view2" />
+=======
+                            android:id="@+id/edit_catched"
+                            android:layout_margin="6dp"
+                            android:visibility="gone"
+                            android:background="@null"
+                            android:layout_below="@+id/view5" />
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
                     </RelativeLayout>
                     <android.support.v7.widget.CardView
                         android:layout_width="70dp"

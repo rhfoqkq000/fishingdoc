@@ -19,7 +19,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.example.kim.fishingdoc.MainActivity;
 import com.example.kim.fishingdoc.R;
 
 import java.util.ArrayList;
@@ -34,18 +33,25 @@ public class FishFragment extends Fragment {
     private ArrayList<String> idList;
     private ArrayList<String> fish_id;
     private ArrayList<String> distin;
+<<<<<<< HEAD
 
     String email = "";
+=======
+    private Button add_bt;
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
 
         final View rootView = inflater.inflate(R.layout.fish_fragment, container, false);
+<<<<<<< HEAD
         email = getArguments().getString("email");
 //        Log.i("email떴냐",""+email);
 //        tvEmail.setText(email.substring(0, 3)+"*** ^0^");
         Log.i("여기까진안전데스-2","뭐어쩌라고");
+=======
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
 
         recyclerViewTitleText = new ArrayList<String>();
         recyclerViewImages = new ArrayList<String>();
@@ -94,9 +100,6 @@ public class FishFragment extends Fragment {
             e.printStackTrace();
         }
 
-//        TextView tvEmail = (TextView)rootView.findViewById(R.id.tvEmail);
-//        tvEmail.setText(email);
-
         final AutoCompleteTextView auto = (AutoCompleteTextView)rootView.findViewById(R.id.auto);
         ImageButton searchBt = (ImageButton)rootView.findViewById(R.id.searchbt);
         final String[] titleTextArray = recyclerViewTitleText.toArray(new String[recyclerViewTitleText.size()]);
@@ -105,9 +108,6 @@ public class FishFragment extends Fragment {
                 android.R.layout.simple_dropdown_item_1line, titleTextArray);
         auto.setAdapter(adWord);
 //        Log.i("여기까진안전데스3",""+recyclerViewTitleText);
-
-
-
 
         auto.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -177,8 +177,7 @@ public class FishFragment extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         ArrayList<AndroidVersion> av = prepareData();
-        MainActivity mainActivity = new MainActivity();
-        AndroidDataAdapter_F mAdapter = new AndroidDataAdapter_F(getContext(), av, recyclerViewImages, recyclerViewTitleText);
+        AndroidDataAdapter_F mAdapter = new AndroidDataAdapter_F(getActivity().getApplicationContext(), av, recyclerViewImages, recyclerViewTitleText);
         mRecyclerView.setAdapter(mAdapter);
 //        Log.i("여기까진안전데스4",""+recyclerViewTitleText);
 
@@ -190,6 +189,18 @@ public class FishFragment extends Fragment {
                     }
                 })
         );
+
+//        CheckBox checkBox = (CheckBox)rootView.findViewById(R.id.checkBox);
+
+        //추가버튼 눌렀을 때
+        add_bt = (Button)rootView.findViewById(R.id.file_add);
+        add_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity().getApplicationContext(), Fish_Write.class);
+                startActivity(intent);
+            }
+        });
 
         return rootView;
     }
@@ -215,6 +226,7 @@ public class FishFragment extends Fragment {
         intent.putExtra("idList", idList);
         intent.putExtra("distin", distin);
         intent.putExtra("fish_id", i);
+<<<<<<< HEAD
         intent.putExtra("email", email);
         startActivityForResult(intent, 3);
     }
@@ -230,4 +242,8 @@ public class FishFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         recreate();
     }
+=======
+        startActivity(intent);
+    }
+>>>>>>> 6bfd2ccc95d212bc5e3f3be52fe0e49d45845944
 }
