@@ -2,6 +2,7 @@ package com.example.kim.fishingdoc.fish;
 
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,11 +21,11 @@ import java.util.ArrayList;
  * Created by user on 2016-07-15.
  */
 class resetFish extends AsyncTask<String, String, String> {
-    String id, distin, habit, live, bait, catched = "";
+    String id, distin, habit, live, bait, catched, email = "";
     int fish_id;
     ArrayList<String> idList = new ArrayList<String>();
 
-    public resetFish(ArrayList<String> idList){
+    public resetFish(ArrayList<String> idList, String email){
         this.id = id;
         this.fish_id = fish_id;
         this.distin = distin;
@@ -33,6 +34,7 @@ class resetFish extends AsyncTask<String, String, String> {
         this.bait = bait;
         this.catched = catched;
         this.idList = idList;
+        this.email = email;
     }
 
     @Override
@@ -53,9 +55,11 @@ class resetFish extends AsyncTask<String, String, String> {
                 obj.put("live", "NULL");
                 obj.put("bait", "NULL");
                 obj.put("catched", "NULL");
+                obj.put("email", email);
 
             obj2.put("doc", obj);
-//            Log.i("obj2떴냐",""+obj2.toString());
+//            obj2.put("email", email);
+            Log.i("obj2떴냐",""+obj2.toString());
 //            Log.i("url뭐냐",""+url);
 //            OutputStreamWriter osw = new OutputStreamWriter(urlConnection.getOutputStream(), "UTF-8");
 //            osw.write(obj.toString());

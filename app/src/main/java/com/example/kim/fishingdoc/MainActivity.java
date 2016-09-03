@@ -64,7 +64,7 @@ public class  MainActivity extends AppCompatActivity implements AHBottomNavigati
 
 
         //set current item
-        bottomNavigation.setCurrentItem(0);
+        bottomNavigation.setCurrentItem(1);
 
     }
 
@@ -80,13 +80,20 @@ public class  MainActivity extends AppCompatActivity implements AHBottomNavigati
         } else if (position == 1) {
             FishFragment fishFragment = new FishFragment();
             Bundle bundle = new Bundle();
+            Log.i("체크눌렀는데스","1321414123");
             bundle.putString("email", email);
             fishFragment.setArguments(bundle);
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id, fishFragment).commit();
 
         } else if (position == 2) {
+            Log.i("체크눌렀는데스","1");
             CheckFragment checkFragment = new CheckFragment();
+            Log.i("체크눌렀는데스","2");
+            Bundle bundle = new Bundle();
+            bundle.putString("email", email);
+            checkFragment.setArguments(bundle);
             getSupportFragmentManager().beginTransaction().replace(R.id.content_id, checkFragment).commit();
+            Log.i("체크눌렀는데스","3");
         }
     }
 

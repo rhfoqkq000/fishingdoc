@@ -1,8 +1,6 @@
 package com.example.kim.fishingdoc.fish;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -43,13 +41,32 @@ public class AndroidDataAdapter_F extends RecyclerView.Adapter<AndroidDataAdapte
 //        Log.i("어댑터에서imgs떴냐용",""+imgs.get(i));
         holder.textView.setText(fish.get(i).toString());
 //        holder.imageView.setImageResource(arrayList.get(i).getrecyclerViewImage());
+//        Log.i("imgs대체뭘로나오길래",""+imgs.get(i).substring(0, 5));
+        if(imgs.get(i).substring(0, 6).equals("images")){
+            try{
+//                getFishTask getFishTask = new getFishTask();
+//                HashMap<String, ArrayList<String>> hash = getFishTask.execute().get();
+//                Log.i("if는되는것같은뎅","2");
+
+                String replace = "http://45.32.61.201:3000/"+imgs.get(i);
+
+//                imgs.get(i).replace(replace, replace);
+                imgs.set(i, replace);
+//                Picasso.with(mcontext).load(imgs.get(i)).resize(100, 100).into(holder.imageView);
+
+            }catch (Exception e){
+                e.printStackTrace();
+                Log.i("이미지뾰롱뾰롱","뭔가있었는데안됐다데스");
+
+            }
+        }
         Picasso.with(mcontext).load(imgs.get(i)).resize(100, 100).into(holder.imageView);
 
         holder.imageView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 Log.i("onLongClick이당","1");
-                DialogSimple();
+//                DialogSimple(v);
                 return false;
             }
         });
@@ -82,27 +99,27 @@ public class AndroidDataAdapter_F extends RecyclerView.Adapter<AndroidDataAdapte
         }
     }
 
-    private void DialogSimple(){
-        checkList = new ArrayList<>();
-        AlertDialog.Builder alt_bld = new AlertDialog.Builder(mcontext);
-        alt_bld.setMessage("등록?^0^").setCancelable(
-                false).setPositiveButton("Yes",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-
-                    }
-                }).setNegativeButton("No",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-
-                        dialog.cancel();
-                    }
-                });
-        AlertDialog alert = alt_bld.create();
-        // Title for AlertDialog
-        alert.setTitle("등☆록하기");
-        // Icon for AlertDialog
-        alert.setIcon(R.drawable.icon);
-        alert.show();
-    }
+//    private void DialogSimple(final View v){
+//        checkList = new ArrayList<>();
+//        AlertDialog.Builder alt_bld = new AlertDialog.Builder(mcontext);
+//        alt_bld.setMessage("등록?^0^").setCancelable(
+//                false).setPositiveButton("Yes",
+//                new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int id) {
+//
+//                    }
+//                }).setNegativeButton("No",
+//                new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int id) {
+//
+//                        dialog.cancel();
+//                    }
+//                });
+//        AlertDialog alert = alt_bld.create();
+//        // Title for AlertDialog
+//        alert.setTitle("등☆록하기");
+//        // Icon for AlertDialog
+//        alert.setIcon(R.drawable.icon);
+//        alert.show();
+//    }
 }

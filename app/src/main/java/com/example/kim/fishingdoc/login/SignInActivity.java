@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.kim.fishingdoc.MainActivity;
@@ -45,8 +46,10 @@ public class SignInActivity extends AppCompatActivity implements
         mStatusTextView = (TextView) findViewById(R.id.status);
 
         com.google.android.gms.common.SignInButton sign_in_button = (com.google.android.gms.common.SignInButton)findViewById(R.id.sign_in_button);
-        android.support.v7.widget.AppCompatButton sign_out_button = (android.support.v7.widget.AppCompatButton)findViewById(R.id.sign_out_button);
-        android.support.v7.widget.AppCompatButton disconnect_button = (android.support.v7.widget.AppCompatButton)findViewById(R.id.disconnect_button);
+//        android.support.v7.widget.AppCompatButton sign_out_button = (android.support.v7.widget.AppCompatButton)findViewById(R.id.sign_out_button);
+//        android.support.v7.widget.AppCompatButton disconnect_button = (android.support.v7.widget.AppCompatButton)findViewById(R.id.disconnect_button);
+        Button sign_out_button = (Button)findViewById(R.id.sign_out_button);
+        Button disconnect_button = (Button)findViewById(R.id.disconnect_button);
 
         sign_in_button.setOnClickListener(this);
         sign_out_button.setOnClickListener(this);

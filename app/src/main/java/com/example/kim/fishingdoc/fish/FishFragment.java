@@ -1,9 +1,12 @@
 package com.example.kim.fishingdoc.fish;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -13,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.kim.fishingdoc.MainActivity;
@@ -33,22 +37,22 @@ public class FishFragment extends Fragment {
 
     String email = "";
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
-//        Log.i("여기까진안전데스-2","뭐어쩌라고");
 
         final View rootView = inflater.inflate(R.layout.fish_fragment, container, false);
         email = getArguments().getString("email");
 //        Log.i("email떴냐",""+email);
 //        tvEmail.setText(email.substring(0, 3)+"*** ^0^");
+        Log.i("여기까진안전데스-2","뭐어쩌라고");
 
         recyclerViewTitleText = new ArrayList<String>();
         recyclerViewImages = new ArrayList<String>();
         idList = new ArrayList<String>();
         fish_id = new ArrayList<String>();
         distin = new ArrayList<String>();
+
 //        Log.i("여기까진안전데스-1","" + recyclerViewTitleText);
 
 
@@ -108,14 +112,11 @@ public class FishFragment extends Fragment {
         auto.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-
                 for(int i = 0; i<titleTextArray.length; i++){
                     if(parent.getItemAtPosition(position).toString().equals(recyclerViewTitleText.get(i))){
                         Intent(i);
                     }
                 }
-
             }
         });
         searchBt.setOnClickListener(new View.OnClickListener() {
@@ -129,9 +130,46 @@ public class FishFragment extends Fragment {
 //                        Log.i("없는데뜨겠냐",""+fishName);
                     }
                 }
+            }
+        });
+
+
+        Button btnNew = (Button)rootView.findViewById(R.id.file_add);
+        btnNew.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog.Builder alt_bld = new AlertDialog.Builder(getContext());
+                alt_bld.setMessage("새 글을 작성하시겠습니까?").setCancelable(
+                        false).setPositiveButton("아니오",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+
+                            }
+                        }).setNegativeButton("예",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Intent i = new Intent(getActivity().getApplicationContext(), Fish_Write.class);
+                                i.putExtra("email", email);
+                                i.putExtra("fish_id", fish_id);
+                                startActivityForResult(i, 3);
+//                Log.i("뜨긴뜸?","1");
+                            }
+                        });
+                AlertDialog alert = alt_bld.create();
+                // Title for AlertDialog
+                alert.setTitle("새 글 작성하기");
+                // Icon for AlertDialog
+                alert.setIcon(R.drawable.icon);
+                alert.show();
+
+
 
             }
         });
+
+
 
         RecyclerView mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
@@ -178,8 +216,18 @@ public class FishFragment extends Fragment {
         intent.putExtra("distin", distin);
         intent.putExtra("fish_id", i);
         intent.putExtra("email", email);
-        startActivity(intent);
+        startActivityForResult(intent, 3);
     }
 
 
+    private void recreate() {
+        Log.e("새로고오오옹침","새로로롤로로로로로고침");
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.detach(this).attach(this).commit();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        recreate();
+    }
 }

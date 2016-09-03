@@ -1,40 +1,48 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:2:1-42:12
+ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:2:1-48:12
 	package
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:3:5-41
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:4:5-41
 		INJECTED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:3:5-51
 	xmlns:android
 		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
 		INJECTED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:5:5-66
+ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:6:5-66
 	android:name
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:5:22-64
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:6:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:6:5-78
+ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:7:5-78
 	android:name
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:6:22-76
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:7:22-76
 uses-permission#android.permission.GET_ACCOUNTS
-ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:7:5-71
+ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:8:5-71
 	android:name
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:7:22-68
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:8:22-68
 uses-permission#android.permission.WAKE_LOCK
-ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:8:5-68
+ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:9:5-68
 	android:name
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:8:22-65
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:9:22-65
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:9:5-79
+ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:10:5-79
 	android:name
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:9:22-77
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:10:22-77
+uses-permission#android.permission.WRITE_APN_SETTINGS
+ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:11:5-12:47
+	tools:ignore
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:12:9-44
+	android:name
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:11:22-74
 application
-ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:11:5-40:19
+ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:14:5-46:19
 MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\user\Desktop\FishhingDoc\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\user\Desktop\FishhingDoc\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\AndroidManifest.xml:7:5-20
 MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\user\Desktop\FishhingDoc\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\AndroidManifest.xml:7:5-20
@@ -82,54 +90,65 @@ MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\user\
 MERGED from [com.android.support:support-v4:23.4.0] C:\Users\user\Desktop\FishhingDoc\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\user\Desktop\FishhingDoc\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:20:5-24:19
 MERGED from [com.android.support:support-v4:23.4.0] C:\Users\user\Desktop\FishhingDoc\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:22:5-20
+MERGED from [FishhingDoc:graphLibrary:unspecified] C:\Users\user\Desktop\FishhingDoc\app\build\intermediates\exploded-aar\FishhingDoc\graphLibrary\unspecified\AndroidManifest.xml:11:5-15:19
 	android:label
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:14:9-41
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:17:9-41
 	android:supportsRtl
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:15:9-35
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:18:9-35
 	android:allowBackup
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:15:9-35
 	android:icon
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:13:9-38
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:16:9-38
 	android:theme
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:16:9-40
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:19:9-40
 activity#com.example.kim.fishingdoc.LoadingActivity
-ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:17:9-23:20
+ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:20:9-26:20
 	android:theme
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:18:13-60
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:21:13-60
 	android:name
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:17:19-50
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:20:19-50
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:19:13-22:29
+ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:22:13-25:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:20:17-69
+ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:23:17-69
 	android:name
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:20:25-66
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:23:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:21:17-77
+ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:24:17-77
 	android:name
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:21:27-74
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:24:27-74
 activity#com.example.kim.fishingdoc.MainActivity
-ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:24:9-28:20
+ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:27:9-32:20
 	android:label
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:26:13-45
-	android:theme
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:27:13-56
-	android:name
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:25:13-41
-activity#com.example.kim.fishingdoc.login.SignInActivity
-ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:29:9-31:20
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:29:13-45
+	android:windowSoftInputMode
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:31:13-60
 	android:theme
 		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:30:13-56
 	android:name
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:29:19-55
-activity#com.example.kim.fishingdoc.fish.Fish_Content
-ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:33:9-37:20
-	android:label
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:34:13-45
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:28:13-41
+activity#com.example.kim.fishingdoc.login.SignInActivity
+ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:33:9-35:20
 	android:theme
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:35:13-56
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:34:13-56
 	android:name
-		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:33:19-52
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:33:19-55
+activity#com.example.kim.fishingdoc.fish.Fish_Content
+ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:37:9-41:20
+	android:label
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:38:13-45
+	android:theme
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:39:13-56
+	android:name
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:37:19-52
+activity#com.example.kim.fishingdoc.fish.Fish_Write
+ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:42:9-44:72
+	android:windowSoftInputMode
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:44:13-60
+	android:theme
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:43:13-56
+	android:name
+		ADDED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml:42:19-50
 uses-sdk
 INJECTED from C:\Users\user\Desktop\FishhingDoc\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\user\Desktop\FishhingDoc\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\AndroidManifest.xml:21:5-23:78
@@ -183,6 +202,7 @@ MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\user\
 MERGED from [com.android.support:support-v4:23.4.0] C:\Users\user\Desktop\FishhingDoc\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:20:5-43
 MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\user\Desktop\FishhingDoc\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\AndroidManifest.xml:18:5-42
 MERGED from [com.android.support:support-v4:23.4.0] C:\Users\user\Desktop\FishhingDoc\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:20:5-43
+MERGED from [FishhingDoc:graphLibrary:unspecified] C:\Users\user\Desktop\FishhingDoc\app\build\intermediates\exploded-aar\FishhingDoc\graphLibrary\unspecified\AndroidManifest.xml:7:5-9:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:appcompat-v7:23.4.0] C:\Users\user\Desktop\FishhingDoc\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion

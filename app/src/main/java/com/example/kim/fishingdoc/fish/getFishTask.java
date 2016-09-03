@@ -19,7 +19,7 @@ import java.util.HashMap;
 /**
  * Created by user on 2016-07-15.
  */
-class getFishTask extends AsyncTask<String, String, HashMap<String, ArrayList<String>>> {
+public class getFishTask extends AsyncTask<String, String, HashMap<String, ArrayList<String>>> {
     ArrayList<String> fishName = new ArrayList<String>();
     ArrayList<String> fishImg = new ArrayList<String>();
     ArrayList<String> id = new ArrayList<String>();
@@ -29,7 +29,7 @@ class getFishTask extends AsyncTask<String, String, HashMap<String, ArrayList<St
     ArrayList<String> live = new ArrayList<String>();
     ArrayList<String> bait = new ArrayList<String>();
     ArrayList<String> catched = new ArrayList<String>();
-
+    String history = "";
     static HashMap<String, ArrayList<String>> hash;
 
     @Override
@@ -67,14 +67,9 @@ class getFishTask extends AsyncTask<String, String, HashMap<String, ArrayList<St
                     bait.add(i, topLevel2.get("bait").toString());
                     catched.add(i, topLevel2.get("catched").toString());
 
-
-
-
-
 //                habit.add(i, ObjToString(topLevel2.get("habit")));
-
-
             }
+
             hash.put("fishName", fishName);
             hash.put("fishImg", fishImg);
             hash.put("id", id);

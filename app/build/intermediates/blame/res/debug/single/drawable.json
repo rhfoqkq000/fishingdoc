@@ -16,12 +16,12 @@
         "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_list_selector_holo_dark.xml"
     },
     {
-        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_plus_signin_btn_icon_light.xml",
-        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\drawable\\common_plus_signin_btn_icon_light.xml"
-    },
-    {
         "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\storm.png",
         "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable\\storm.png"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_plus_signin_btn_icon_light.xml",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.4.0\\res\\drawable\\common_plus_signin_btn_icon_light.xml"
     },
     {
         "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
@@ -160,12 +160,12 @@
         "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\drawable\\design_fab_background.xml"
     },
     {
-        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
-        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_btn_borderless_material.xml"
-    },
-    {
         "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
         "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_btn_borderless_material.xml"
     },
     {
         "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\graph.png",

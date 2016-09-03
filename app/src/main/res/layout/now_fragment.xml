@@ -15,8 +15,8 @@
             android:layout_height="430dp"
             android:background="@drawable/backgrond">
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
                 android:id="@+id/now_weather"
                 android:src="@drawable/sun1"
                 android:layout_alignParentTop="true"
@@ -32,7 +32,7 @@
                 android:textColor="#6B6D6E"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/now_weather"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="16dp"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:id="@+id/now_view"
-                android:background="#000000"
+                android:background="#6B6D6E"
                 android:layout_below="@+id/lin2"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"/>
@@ -105,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/now_view"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="15dp"
                 android:orientation="horizontal">
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -134,8 +134,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/now_cloud"
-                        android:text="구름"
+                        android:id="@+id/now_salt"
+                        android:text="염분"
                         android:textStyle="bold"
                         android:textSize="13dp"
                         android:textColor="#6B6D6E"
@@ -145,12 +145,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/now_cloud_content"
+                        android:id="@+id/now_salt_content"
                         android:text="75%"
                         android:textStyle="bold"
                         android:textSize="13dp"
                         android:textColor="#FFFFFF"
-                        android:layout_toEndOf="@+id/now_cloud"
+                        android:layout_toEndOf="@+id/now_salt"
                         android:layout_below="@+id/now_airflow_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginLeft="16dp"/>
@@ -158,12 +158,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/now_fargo"
-                        android:text="파고"
+                        android:text="강수"
                         android:textStyle="bold"
                         android:textSize="13dp"
                         android:textColor="#6B6D6E"
                         android:layout_marginTop="8dp"
-                        android:layout_below="@+id/now_cloud"
+                        android:layout_below="@+id/now_salt"
                         android:layout_marginLeft="16dp"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -174,7 +174,7 @@
                         android:textSize="13dp"
                         android:textColor="#FFFFFF"
                         android:layout_toEndOf="@+id/now_fargo"
-                        android:layout_below="@+id/now_cloud_content"
+                        android:layout_below="@+id/now_salt_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginLeft="16dp"/>
                 </RelativeLayout>
@@ -204,23 +204,23 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/now_rainfall"
-                        android:text="강수량"
+                        android:id="@+id/now_airpress"
+                        android:text="기압"
                         android:textStyle="bold"
                         android:textSize="13dp"
                         android:textColor="#6B6D6E"
                         android:layout_marginTop="8dp"
                         android:layout_below="@+id/now_wind"
-                        android:layout_marginLeft="4dp"/>
+                        android:layout_marginLeft="16dp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/now_rainfall_content"
+                        android:id="@+id/now_airpress_content"
                         android:text="10%"
                         android:textStyle="bold"
                         android:textSize="13dp"
                         android:textColor="#FFFFFF"
-                        android:layout_toEndOf="@+id/now_rainfall"
+                        android:layout_toEndOf="@+id/now_airpress"
                         android:layout_below="@+id/now_wind_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginLeft="16dp"/>
@@ -233,7 +233,7 @@
                         android:textSize="13dp"
                         android:textColor="#6B6D6E"
                         android:layout_marginTop="8dp"
-                        android:layout_below="@+id/now_rainfall"
+                        android:layout_below="@+id/now_airpress"
                         android:layout_marginLeft="16dp"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -244,7 +244,7 @@
                         android:textSize="13dp"
                         android:textColor="#FFFFFF"
                         android:layout_toEndOf="@+id/now_hu"
-                        android:layout_below="@+id/now_rainfall_content"
+                        android:layout_below="@+id/now_airpress_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginLeft="16dp"/>
                 </RelativeLayout>
@@ -284,7 +284,7 @@
                             android:text="단위 : cm"
                             android:layout_alignParentBottom="true"
                             android:layout_alignParentEnd="true" />
-                        </RelativeLayout>
+                    </RelativeLayout>
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="2dp"
@@ -293,15 +293,22 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="10dp"
                         android:layout_below="@+id/tide_re" />
-                    <ImageView
+                    <RelativeLayout
+                        android:id="@+id/layoutGraphView"
                         android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        android:id="@+id/image_tide"
-                        android:src="@drawable/img"
-                        android:adjustViewBounds="true"
-                        android:scaleType="fitXY"
+                        android:layout_height="300dp"
                         android:layout_margin="6dp"
-                        android:layout_below="@+id/tide_view" />
+                        android:layout_below="@+id/tide_view">
+                    </RelativeLayout>
+                    <!--<ImageView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="150dp"-->
+                    <!--android:id="@+id/image_tide"-->
+                    <!--android:src="@drawable/img"-->
+                    <!--android:adjustViewBounds="true"-->
+                    <!--android:scaleType="fitXY"-->
+                    <!--android:layout_margin="6dp"-->
+                    <!--android:layout_below="@+id/tide_view" />-->
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
             <android.support.v7.widget.CardView

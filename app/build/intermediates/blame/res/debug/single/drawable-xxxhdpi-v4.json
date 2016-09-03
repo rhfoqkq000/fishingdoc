@@ -1,59 +1,59 @@
 [
     {
-        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",
-        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
-    },
-    {
         "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\splash.png",
         "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\splash.png"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\rainsnow.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\rainsnow.png"
     },
     {
         "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png",
         "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\img.jpg",
-        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\img.jpg"
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\cloudy2.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\cloudy2.png"
     },
     {
-        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png",
-        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\b_cloudy2.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\b_cloudy2.png"
     },
     {
         "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_search_api_mtrl_alpha.png",
         "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_ic_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\icon.png",
-        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\icon.png"
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png",
         "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\backgrond.jpg",
-        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\backgrond.jpg"
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\b_snowy.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\b_snowy.png"
     },
     {
-        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
-        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\b_cloudy3.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\b_cloudy3.png"
     },
     {
         "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
         "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
-        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png",
-        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\snowy.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\snowy.png"
     },
     {
         "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png",
         "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
-        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\sunny.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\sunny.png"
     },
     {
         "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\plus.png",
@@ -68,6 +68,10 @@
         "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_ic_clear_mtrl_alpha.png"
     },
     {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\b_cloudy1.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\b_cloudy1.png"
+    },
+    {
         "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png",
         "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
@@ -76,16 +80,84 @@
         "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\rainy.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\rainy.png"
+    },
+    {
         "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_36dp.png",
         "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\b_rainsnow.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\b_rainsnow.png"
     },
     {
         "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\menu_illu.png",
         "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\menu_illu.png"
     },
     {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\b_sunny.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\b_sunny.png"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\cloudy1.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\cloudy1.png"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\b_rainy.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\b_rainy.png"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\menu_check.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\menu_check.png"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\img.jpg",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\img.jpg"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\icon.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\icon.png"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\backgrond.jpg",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\backgrond.jpg"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
         "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_voice_search_api_mtrl_alpha.png",
         "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_ic_voice_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\cloudy3.png",
+        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\cloudy3.png"
     },
     {
         "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_star_black_36dp.png",
@@ -94,10 +166,6 @@
     {
         "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png",
         "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
-    },
-    {
-        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
-        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
     },
     {
         "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\menu_weather.png",
@@ -120,19 +188,7 @@
         "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_ic_ab_back_mtrl_am_alpha.png"
     },
     {
-        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
-        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\save.png",
         "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\save.png"
-    },
-    {
-        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png",
-        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
-    },
-    {
-        "merged": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\menu_check.png",
-        "source": "C:\\Users\\user\\Desktop\\FishhingDoc\\app\\src\\main\\res\\drawable-xxxhdpi\\menu_check.png"
     }
 ]

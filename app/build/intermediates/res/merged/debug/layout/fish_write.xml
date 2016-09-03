@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/parentView"
+    android:background="#FFFFFF">
+    <android.support.design.widget.AppBarLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/fish_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+            <TextView
+                android:id="@+id/fish_toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FishingDoc"
+                android:textColor="@android:color/white"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_gravity="center" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:id="@+id/insert_image"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@android:drawable/ic_menu_myplaces" />
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    card_view:cardElevation="2dp"
+                    card_view:cardCornerRadius="5dp"
+                    android:layout_below="@+id/insert_image"
+                    android:id="@+id/name_view"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true">
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/name_edit"
+                        android:hint="제목을 입력하세요."
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:textColor="#000000"
+                        android:background="@null"
+                        android:visibility="visible"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"/>
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                card_view:contentPadding="10dp"
+                card_view:cardElevation="2dp"
+                card_view:cardCornerRadius="5dp"
+                android:background="#FFFFFF">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/re_live">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="서식지"
+                            android:layout_margin="6dp"
+                            android:textSize="22dp"
+                            android:textStyle="bold"
+                            android:id="@+id/live"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:id="@+id/view3"
+                            android:layout_below="@+id/live"
+                            android:background="#ccc"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="10dp" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:id="@+id/edit_live"
+                            android:hint="내용을 입력하세요."
+                            android:layout_margin="6dp"
+                            android:visibility="visible"
+                            android:background="@null"
+                            android:layout_below="@+id/view3" />
+                    </RelativeLayout>
+                    <!--<android.support.v7.widget.CardView-->
+                        <!--android:layout_width="70dp"-->
+                        <!--android:layout_height="35dp"-->
+                        <!--android:layout_below="@+id/re_live"-->
+                        <!--android:layout_alignParentEnd="true"-->
+                        <!--card_view:cardElevation="2dp"-->
+                        <!--card_view:cardCornerRadius="5dp"-->
+                        <!--card_view:cardBackgroundColor="#0084ff">-->
+                        <!--<Button-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:id="@+id/button_add_live"-->
+                            <!--android:background="#00FF0000"-->
+                            <!--android:text="확인"-->
+                            <!--android:textColor="#FFFFFF"-->
+                            <!--android:visibility="visible" />-->
+                        <!--<Button-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:id="@+id/button_save_live"-->
+                            <!--android:background="#00FF0000"-->
+                            <!--android:text="수정"-->
+                            <!--android:textColor="#FFFFFF"-->
+                            <!--android:visibility="gone" />-->
+                    <!--</android.support.v7.widget.CardView>-->
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                card_view:contentPadding="10dp"
+                card_view:cardElevation="2dp"
+                card_view:cardCornerRadius="5dp"
+                android:background="#FFFFFF">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/re_bait">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="미끼"
+                            android:layout_margin="6dp"
+                            android:textSize="22dp"
+                            android:textStyle="bold"
+                            android:id="@+id/bait"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:id="@+id/view4"
+                            android:background="#ccc"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_below="@+id/bait" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:id="@+id/text_bait"
+                            android:visibility="gone"
+                            android:layout_margin="6dp"
+                            android:layout_below="@+id/view4" />
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:id="@+id/edit_bait"
+                            android:hint="내용을 입력하세요."
+                            android:layout_margin="6dp"
+                            android:visibility="visible"
+                            android:background="@null"
+                            android:layout_below="@+id/view4" />
+                    </RelativeLayout>
+                    <!--<android.support.v7.widget.CardView-->
+                        <!--android:layout_width="70dp"-->
+                        <!--android:layout_height="35dp"-->
+                        <!--android:layout_below="@+id/re_bait"-->
+                        <!--android:layout_alignParentEnd="true"-->
+                        <!--card_view:cardElevation="2dp"-->
+                        <!--card_view:cardCornerRadius="5dp"-->
+                        <!--card_view:cardBackgroundColor="#0084ff">-->
+                        <!--<Button-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:id="@+id/button_add_bait"-->
+                            <!--android:background="#00FF0000"-->
+                            <!--android:text="확인"-->
+                            <!--android:textColor="#FFFFFF"-->
+                            <!--android:visibility="visible" />-->
+                        <!--<Button-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:id="@+id/button_save_bait"-->
+                            <!--android:background="#00FF0000"-->
+                            <!--android:text="수정"-->
+                            <!--android:textColor="#FFFFFF"-->
+                            <!--android:visibility="gone" />-->
+                    <!--</android.support.v7.widget.CardView>-->
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                card_view:contentPadding="10dp"
+                card_view:cardElevation="2dp"
+                card_view:cardCornerRadius="5dp"
+                android:background="#FFFFFF">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/re_catched">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="잡는 방법"
+                            android:layout_margin="6dp"
+                            android:textSize="22dp"
+                            android:textStyle="bold"
+                            android:id="@+id/catched"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:id="@+id/view5"
+                            android:layout_below="@+id/catched"
+                            android:background="#ccc"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="10dp" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:id="@+id/edit_catched"
+                            android:hint="내용을 입력하세요."
+                            android:layout_margin="6dp"
+                            android:visibility="visible"
+                            android:background="@null"
+                            android:layout_below="@+id/view5" />
+                    </RelativeLayout>
+                    <!--<android.support.v7.widget.CardView-->
+                        <!--android:layout_width="70dp"-->
+                        <!--android:layout_height="35dp"-->
+                        <!--android:layout_below="@+id/re_catched"-->
+                        <!--android:layout_alignParentEnd="true"-->
+                        <!--card_view:cardElevation="2dp"-->
+                        <!--card_view:cardCornerRadius="5dp"-->
+                        <!--card_view:cardBackgroundColor="#0084ff">-->
+                        <!--<Button-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:id="@+id/button_add"-->
+                            <!--android:background="#00FF0000"-->
+                            <!--android:text="확인"-->
+                            <!--android:textColor="#FFFFFF"-->
+                            <!--android:visibility="visible" />-->
+                        <!--<Button-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:id="@+id/button_save_catched"-->
+                            <!--android:background="#00FF0000"-->
+                            <!--android:text="수정"-->
+                            <!--android:textColor="#FFFFFF"-->
+                            <!--android:visibility="gone" />-->
+                    <!--</android.support.v7.widget.CardView>-->
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                card_view:contentPadding="10dp"
+                card_view:cardElevation="2dp"
+                card_view:cardCornerRadius="5dp"
+                android:background="#FFFFFF">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/re_distin">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="특징"
+                            android:layout_margin="6dp"
+                            android:textSize="22dp"
+                            android:textStyle="bold"
+                            android:id="@+id/distin"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:id="@+id/view1"
+                            android:layout_below="@+id/distin"
+                            android:background="#ccc"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="10dp" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="100dp"
+                            android:id="@+id/edit_distin"
+                            android:hint="내용을 입력하세요."
+                            android:layout_margin="6dp"
+                            android:visibility="visible"
+                            android:background="@null"
+                            android:layout_below="@+id/view1" />
+
+                    </RelativeLayout>
+                    <!--<android.support.v7.widget.CardView-->
+                        <!--android:layout_width="70dp"-->
+                        <!--android:layout_height="35dp"-->
+                        <!--android:layout_below="@+id/re_distin"-->
+                        <!--android:layout_alignParentEnd="true"-->
+                        <!--card_view:cardElevation="2dp"-->
+                        <!--card_view:cardCornerRadius="5dp"-->
+                        <!--card_view:cardBackgroundColor="#0084ff">-->
+                        <!--<Button-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:id="@+id/button_add_distin"-->
+                            <!--android:background="#00FF0000"-->
+                            <!--android:text="확인"-->
+                            <!--android:textColor="#FFFFFF"-->
+                            <!--android:visibility="visible" />-->
+                        <!--<Button-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:id="@+id/button_save_distin"-->
+                            <!--android:background="#00FF0000"-->
+                            <!--android:text="수정"-->
+                            <!--android:textColor="#FFFFFF"-->
+                            <!--android:visibility="gone" />-->
+                    <!--</android.support.v7.widget.CardView>-->
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                card_view:contentPadding="10dp"
+                card_view:cardElevation="2dp"
+                card_view:cardCornerRadius="5dp"
+                android:background="#FFFFFF">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/re_habit">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="습성"
+                            android:layout_margin="6dp"
+                            android:textSize="22dp"
+                            android:textStyle="bold"
+                            android:id="@+id/habit"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:id="@+id/view2"
+                            android:layout_below="@+id/habit"
+                            android:background="#ccc"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="10dp" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="100dp"
+                            android:id="@+id/edit_habit"
+                            android:hint="내용을 입력하세요."
+                            android:layout_margin="6dp"
+                            android:visibility="visible"
+                            android:background="@null"
+                            android:layout_below="@+id/view2" />
+                    </RelativeLayout>
+                    <!--<android.support.v7.widget.CardView-->
+                        <!--android:layout_width="70dp"-->
+                        <!--android:layout_height="35dp"-->
+                        <!--android:layout_below="@+id/re_habit"-->
+                        <!--android:layout_alignParentEnd="true"-->
+                        <!--card_view:cardElevation="2dp"-->
+                        <!--card_view:cardCornerRadius="5dp"-->
+                        <!--card_view:cardBackgroundColor="#0084ff">-->
+                        <!--<Button-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:id="@+id/button_add_habit"-->
+                            <!--android:background="#00FF0000"-->
+                            <!--android:text="확인"-->
+                            <!--android:textColor="#FFFFFF"-->
+                            <!--android:visibility="visible" />-->
+                        <!--<Button-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:id="@+id/button_save_habit"-->
+                            <!--android:background="#00FF0000"-->
+                            <!--android:text="수정"-->
+                            <!--android:textColor="#FFFFFF"-->
+                            <!--android:visibility="gone" />-->
+                    <!--</android.support.v7.widget.CardView>-->
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:layout_alignParentEnd="true"
+                card_view:cardElevation="2dp"
+            android:layout_below="@+id/re_habit"
+            card_view:cardCornerRadius="5dp"
+                card_view:cardBackgroundColor="#0084ff">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_add"
+                    android:background="#00FF0000"
+                    android:text="확인"
+                    android:textColor="#FFFFFF"
+                    android:visibility="visible" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button_save_catched"
+                    android:background="#00FF0000"
+                    android:text="수정"
+                    android:textColor="#FFFFFF"
+                    android:visibility="gone" />
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
